@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Skydash Admin</title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="../../vendors/feather/feather.css">
+  <link rel="stylesheet" href="../../vendors/ti-icons/css/themify-icons.css">
+  <link rel="stylesheet" href="../../vendors/css/vendor.bundle.base.css">
+  <!-- endinject -->
+  <!-- Plugin css for this page -->
+  <link rel="stylesheet" href="../../vendors/select2/select2.min.css">
+  <link rel="stylesheet" href="../../vendors/select2-bootstrap-theme/select2-bootstrap.min.css">
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="../../css/vertical-layout-light/style.css">
+  <!-- endinject -->
+  <link rel="shortcut icon" href="../../images/favicon.png" />
+  <link rel="stylesheet" href="../../vendors/mdi/css/materialdesignicons.min.css">
+</head>
+
+<body>
+  <div class="container-scroller">
+    <!-- partial:../../partials/_navbar.html -->
+    <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+      <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+        <a class="navbar-brand brand-logo mr-5" href="../../index.html"><img src="../../images/logo.svg" class="mr-2"
+            alt="logo" /></a>
+        <a class="navbar-brand brand-logo-mini" href="../../index.html"><img src="../../images/logo-mini.svg"
+            alt="logo" /></a>
+      </div>
+      
+    </nav>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper" >
+      <!-- partial:../../partials/_settings-panel.html -->
+      
+      <!-- partial -->
+      <!-- partial:../../partials/_sidebar.html -->
+      <script src="//code.jquery.com/jquery.min.js"></script>
+      <!-- <div id="nav-placeholder">
+
+      </div>
+      <script>
+        $.get("../../Nav.html", function (data) {
+          $("#nav-placeholder").replaceWith(data);
+        });
+      </script> -->
+      <!-- partial -->
+      <div class="main-panel" style="width: 100%;">
+        <div class="content-wrapper">
+          <div class="row">
+            <div class="col-12">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Interview Form</h4>
+                  <!-- <form class="form-sample"> -->
+                  <p class="card-description">
+
+                    Personal Details
+                  </p>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Name</label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control collectable" id="name" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <label class="col-sm-3 col-form-label">Your Picture</label>
+                      <input id="fileupload" type="file" name="fileupload" onchange="uploadFile()" />
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Address 1 </label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control collectable" id="address1" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Address 2</label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control collectable" id="address2" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">ID </label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control collectable" id="clientId" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Age</label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control collectable" id="age" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Mobile </label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control collectable" id="mobile" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Wechat/Whatsapp</label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control collectable" id="whatApp" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Martial</label>
+                        <div class="col-sm-9">
+                          <select class="form-control collectable" id="martial">
+                            <option>Singel</option>
+                            <option>Married</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group row">
+                        <label class="col-sm-3 col-form-label"> N/A</label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control collectable" id="na" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Email Address</label>
+                        <div class="col-sm-9">
+                          <input type="email" class="form-control collectable" id="email" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Health Status</label>
+                        <div class="col-sm-9">
+                          <select class="form-control collectable" id="healthStatus">
+                            <option>UnSick</option>
+                            <option>Sick</option>
+
+
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+
+
+                  </div>
+                  <p class="card-description">
+
+                  </p>
+
+
+
+                  <div class="row">
+
+                    <div class="col-md-12">
+
+                      <div class="form-group row">
+                        <label class="col-sm-3 col-form-label"> Nationality</label>
+                        <select class="js-example-basic-single w-100 collectable" id="nationality">
+                          <option value="AL">Alabama</option>
+                          <option value="WY">Wyoming</option>
+                          <option value="AM">America</option>
+                          <option value="CA">Canada</option>
+                          <option value="RU">Russia</option>
+                        </select>
+                      </div>
+
+
+                    </div>
+
+                  </div>
+                  <br>
+                  <hr>
+                  <br>
+                  <p class="card-description">
+
+                    Working Experince
+                  </p>
+                  <div class="row">
+                    <div class="col-md-3">
+                      <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Company 1</label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control collectable" id="workEx1Name" placeholder="Name" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-2">
+                      <div class="form-group row">
+
+                        <div class="col-sm-12">
+                          <input type="text" class="form-control collectable" id="workEx1Department"
+                            placeholder="Department" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-2">
+                      <div class="form-group row">
+
+                        <div class="col-sm-12">
+                          <input type="text" class="form-control collectable" id="workEx1Position"
+                            placeholder="Postion" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-2">
+                      <div class="form-group row">
+
+                        <div class="col-sm-12">
+                          <input type="text" class="form-control collectable" id="workEx1WorkingPeriod"
+                            placeholder="Working Period " />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="form-group row">
+
+                        <div class="col-sm-12">
+                          <input type="text" class="form-control collectable" id="workEx1ReasonLeave"
+                            placeholder="Reason Of Leave" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-3">
+                      <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Company 2</label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control collectable" id="workEx2Name" placeholder="Name" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-2">
+                      <div class="form-group row">
+
+                        <div class="col-sm-12">
+                          <input type="text" class="form-control collectable" id="workEx2Department"
+                            placeholder="Department" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-2">
+                      <div class="form-group row">
+
+                        <div class="col-sm-12">
+                          <input type="text" class="form-control collectable" id="workEx2Position"
+                            placeholder="Postion" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-2">
+                      <div class="form-group row">
+
+                        <div class="col-sm-12">
+                          <input type="text" class="form-control collectable" id="workEx2WorkingPeriod"
+                            placeholder="Working Period " />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="form-group row">
+
+                        <div class="col-sm-12">
+                          <input type="text" class="form-control collectable" id="workEx2ReasonLeave"
+                            placeholder="Reason Of Leave" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-3">
+                      <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Company 3</label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control collectable" id="workEx3Name" placeholder="Name" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-2">
+                      <div class="form-group row">
+
+                        <div class="col-sm-12">
+                          <input type="text" class="form-control collectable" id="workEx3Department"
+                            placeholder="Department" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-2">
+                      <div class="form-group row">
+
+                        <div class="col-sm-12">
+                          <input type="text" class="form-control collectable" id="workEx3Position"
+                            placeholder="Postion" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-2">
+                      <div class="form-group row">
+
+                        <div class="col-sm-12">
+                          <input type="text" class="form-control collectable" id="workEx3WorkingPeriod"
+                            placeholder="Working Period " />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="form-group row">
+
+                        <div class="col-sm-12">
+                          <input type="text" class="form-control collectable" id="workEx3ReasonLeave"
+                            placeholder="Reason Of Leave" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <br>
+                  <hr>
+                  <br>
+                  <p class="card-description">
+
+                    Education
+                  </p>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">School of Graduation</label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control collectable" id="schoolOfGraduation" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Major/Profession</label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control collectable" id="major" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Year of Graduation</label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control collectable" id="yearOfGrad" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Heighest Graduation</label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control collectable" id="heighGrad" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <br>
+                  <hr>
+                  <br>
+                  <p class="card-description">
+
+                    Family Member
+                  </p>
+                  <div class="row">
+                    <div class="col-md-3">
+                      <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Member 1</label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control collectable" placeholder="Name" id="member1Name" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-2">
+                      <div class="form-group row">
+
+                        <div class="col-sm-12">
+                          <input type="text" class="form-control collectable" placeholder="Relationship"
+                            id="member1RelationShip" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-1">
+                      <div class="form-group row">
+
+                        <div class="col-sm-12">
+                          <input type="text" class="form-control collectable" placeholder="N/A" id="member1Na" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="form-group row">
+
+                        <div class="col-sm-12">
+                          <input type="text" class="form-control collectable" placeholder="Mobile" id="member1Mobile" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="form-group row">
+
+                        <div class="col-sm-12">
+                          <input type="text" class="form-control collectable" placeholder="Company/Home Address"
+                            id="member1Company" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-3">
+                      <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Member 2</label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control collectable" placeholder="Name" id="member2Name" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-2">
+                      <div class="form-group row">
+
+                        <div class="col-sm-12">
+                          <input type="text" class="form-control collectable" placeholder="Relationship"
+                            id="member2RelationShip" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-1">
+                      <div class="form-group row">
+
+                        <div class="col-sm-12">
+                          <input type="text" class="form-control collectable" placeholder="N/A" id="member2Na" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="form-group row">
+
+                        <div class="col-sm-12">
+                          <input type="text" class="form-control collectable" placeholder="Mobile" id="member2Mobile" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="form-group row">
+
+                        <div class="col-sm-12">
+                          <input type="text" class="form-control collectable" placeholder="Company/Home Address"
+                            id="member2Company" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <br>
+                  <hr>
+                  <br>
+                  <p class="card-description">
+
+                    Emergency Contact
+                  </p>
+                  <div class="row">
+                    <div class="col-md-4">
+                      <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Contact 1</label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control collectable" placeholder="name"
+                            id="emergContact1Name" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group row">
+
+
+                        <input type="text" class="form-control collectable" placeholder="Relationship"
+                          id="emergContact1RelationShip" />
+
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group row">
+
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control collectable" placeholder="Mobile"
+                            id="emergContact1Mobile" />
+                        </div>
+                      </div>
+                    </div>
+
+
+                  </div>
+                  <div class="row">
+                    <div class="col-md-4">
+                      <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Contact 2</label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control collectable" placeholder="name"
+                            id="emergContact2Name" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group row">
+
+
+                        <input type="text" class="form-control collectable" placeholder="Relationship"
+                          id="emergContact2RelationShip" />
+
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group row">
+
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control collectable" placeholder="Mobile"
+                            id="emergContact2Mobile" />
+                        </div>
+                      </div>
+                    </div>
+
+
+                  </div>
+                  <br>
+                  <hr>
+                  <br>
+                  <p class="card-description">
+
+                    Your Resume
+                  </p>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Please Upload you resume here : </label>
+                        <input id="fileupload2" type="file" name="fileupload" onchange="uploadFile2()" />
+                      </div>
+                    </div>
+
+
+
+                  </div>
+                  <div class="template-demo" style="float: right;">
+
+                    <button type="button" class="btn btn-outline-info btn-icon-text" onclick="collectForm()">
+                      Submit
+
+                    </button>
+
+                  </div>
+                  <!-- </form> -->
+
+                </div>
+
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+        <!-- <div class="Security" Sec::{{let i : i%10 : i++}}> 
+
+            <section sec:permissions= "Admin , Owner , Manager , Employee,CLient" ></section>
+        </div> -->
+        <!-- content-wrapper ends -->
+        <!-- partial:../../partials/_footer.html -->
+        <footer class="footer">
+          <div class="d-sm-flex justify-content-center justify-content-sm-between">
+            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2021. Premium <a
+                href="https://www.bootstrapdash.com/" target="_blank">Bootstrap admin template</a> from BootstrapDash.
+              All rights reserved.</span>
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i
+                class="ti-heart text-danger ml-1"></i></span>
+          </div>
+        </footer>
+        <!-- partial -->
+      </div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+  <!-- container-scroller -->
+  <!-- plugins:js -->
+  <script src="../../vendors/js/vendor.bundle.base.js"></script>
+  <!-- endinject -->
+  <!-- Plugin js for this page -->
+  <script src="../../vendors/typeahead.js/typeahead.bundle.min.js"></script>
+  <script src="../../vendors/select2/select2.min.js"></script>
+  <!-- End plugin js for this page -->
+  <!-- inject:js -->
+  <script src="../../js/off-canvas.js"></script>
+  <script src="../../js/hoverable-collapse.js"></script>
+  <script src="../../js/template.js"></script>
+  <script src="../../js/settings.js"></script>
+  <script src="../../js/todolist.js"></script>
+  <!-- endinject -->
+  <!-- Custom js for this page-->
+  <script src="../../js/file-upload.js"></script>
+  <script src="../../js/typeahead.js"></script>
+  <script src="../../js/select2.js"></script>
+  <script src="../../js/interview/interview.js"></script>
+  <!-- End custom js for this page-->
+  <script>
+    function myFunction() {
+      var x = document.getElementById("myInput");
+      if (x.type === "password") {
+        x.type = "text";
+      } else {
+        x.type = "password";
+      }
+    }
+  </script>
+
+</body>
+
+</html>
