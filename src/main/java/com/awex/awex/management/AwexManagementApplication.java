@@ -7,8 +7,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class AwexManagementApplication {
 
 	public static void main(String[] args) {  
-		SpringApplication.run(AwexManagementApplication.class, args);
+		SpringApplication.run(AwexManagementApplication.class, args);    
 	}
 
 }  
-                                             	                                  
+                                             	                                    

@@ -76,7 +76,7 @@
                                
                     <div class="col-md-6">
                       <label class="col-sm-3 col-form-label">Your Picture</label>
-                      <input id="fileupload" type="file" name="fileupload" onchange="uploadFile()" hidden />
+                      <input id="fileupload" type="file" name="fileupload" onchange="uploadFile()" hidden required />
                       &nbsp;<label id="photoLabel" for="fileupload" class="btn btn-inverse-primary btn-fw">Choose File</label>
                       <script>
                         function open(){
@@ -572,7 +572,7 @@
                     <div class="col-md-12">
                       <div class="form-group row">
                         <label class="col-sm-3 col-form-label">Please Upload you resume here : </label>
-                        <input id="fileupload2" type="file" name="fileupload" onchange="uploadFile2()" hidden />
+                        <input id="fileupload2" type="file" name="fileupload" onchange="uploadFile2()" hidden required />
                         &nbsp;<label id="resumeLabel" for="fileupload2" class="btn btn-inverse-danger btn-fw" onclick="open2()">Choose File</label>
                       </div>
                     </div>

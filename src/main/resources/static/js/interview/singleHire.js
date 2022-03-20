@@ -69,6 +69,21 @@ $(document).ready(function () {
             document.getElementById("emergContact2Mobile").value = data.emergContact2Mobile ; 
             document.getElementById("status").value = data.status ; 
             position = data.positionfb ; 
+
+
+            if(data.photoLink == null || data.photoLink == ""){
+                document.getElementById("reviewPhoto").disabled = true ;
+            }else {
+                document.getElementById("reviewPhoto").href = "/files/"+data.photoLink;
+            }
+            if(data.resumeLink == null || data.resumeLink == ""){
+                document.getElementById("reviewCV").disabled = true ;
+            }else {
+                document.getElementById("reviewCV").href = "/files/"+data.resumeLink;
+            }
+
+           
+            
         },
         error: function (e) {
         }
