@@ -96,6 +96,7 @@ function collectForm(){
         success: function (data) {
             console.log("Success");
             console.log(data);
+            window.location = "/allHires";
         },
         error: function (e) {
             console.log(e);
