@@ -9,7 +9,8 @@ async function uploadFile() {
       method: "POST",
       body: formData
     }).then(response => response.text())
-      .then(data => image = data);
+      .then(data => image = data)
+      .then(document.getElementById("photoLabel").innerHTML = "Uploaded Successfully");
   }
 
   async function uploadFile2() {
@@ -19,7 +20,8 @@ async function uploadFile() {
       method: "POST",
       body: formData
     }).then(response => response.text())
-      .then(data => cv = data);
+      .then(data => cv = data)
+      .then(document.getElementById("resumeLabel").innerHTML = "Uploaded Successfully");
   }
 
 
