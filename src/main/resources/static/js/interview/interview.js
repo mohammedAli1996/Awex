@@ -47,6 +47,7 @@ function collectForm() {
         success: function (data) {
             console.log("Success");
             console.log(data);
+            window.location = "/success";
         },
         error: function (e) {
             console.log(e);

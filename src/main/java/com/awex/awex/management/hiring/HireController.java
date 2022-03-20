@@ -19,10 +19,26 @@ public class HireController {
   
 	@Autowired
 	private HireService hireService ;      
-
-	@GetMapping("/addHire")
-	public ModelAndView getAddHire() {
+   
+	   
+	
+	      
+	@GetMapping("/success")                    
+	public ModelAndView getSuccess() {
+		ModelAndView mav = new ModelAndView("succsess");
+		return mav ;   
+	}
+	
+	@GetMapping("/addHire")                    
+	public ModelAndView getAddHireNoPos() {
+		ModelAndView mav = new ModelAndView("hiring/generateHireForm");
+		return mav ;   
+	}
+	
+	@GetMapping("/addHire/{position}")
+	public ModelAndView getAddHire(@PathVariable String position) {
 		ModelAndView mav = new ModelAndView("Interview/interviewForm");
+		mav.addObject("positionfb", position);
 		return mav ;   
 	}
 	    

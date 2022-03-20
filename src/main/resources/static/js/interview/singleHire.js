@@ -1,5 +1,5 @@
 var id ; 
-
+var position ; 
 $(document).ready(function () {
 
     id = document.getElementById("id").value;
@@ -68,6 +68,7 @@ $(document).ready(function () {
             document.getElementById("emergContact2RelationShip").value = data.emergContact2RelationShip ; 
             document.getElementById("emergContact2Mobile").value = data.emergContact2Mobile ; 
             document.getElementById("status").value = data.status ; 
+            position = data.positionfb ; 
         },
         error: function (e) {
         }
@@ -82,7 +83,7 @@ function collectForm(){
     for (var i = 0, len = elements.length; i < len; i++) {
             request[elements[i].id] = elements[i].value;
     }
-
+    request["positionfb"] =  position; 
     $.ajax({
         type: "PUT",
         contentType: "application/json",

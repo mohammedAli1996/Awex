@@ -22,6 +22,8 @@ public class HireModel {
 	@GeneratedValue(strategy = GenerationType.IDENTITY) 
 	private int id ;
 	
+	private String positionfb ;
+	
 	private Date createdAt ; 
 	/*Personal Details*/
 	private String name ;
