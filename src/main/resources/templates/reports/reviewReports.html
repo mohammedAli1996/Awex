@@ -299,10 +299,10 @@
 
       </div>
       <script>
-      $.get("../../Nav.html", function(data){
-          $("#nav-placeholder").replaceWith(data);
-      });
-      </script>
+        $.get("/getNav", function(data){
+            $("#nav-placeholder").replaceWith(data);
+        });
+        </script>
       <!-- partial -->
       <div class="main-panel">        
         <div class="content-wrapper">
@@ -432,10 +432,10 @@
 
           </div>
         </div>
-        <div class="Security" Sec::{{let i : i%10 : i++}}> 
+        <!-- <div class="Security" Sec::{{let i : i%10 : i++}}> 
 
             <section sec:permissions= "Admin , Owner , Manager , Employee,CLient" ></section>
-        </div>
+        </div> -->
         <!-- content-wrapper ends -->
         <!-- partial:../../partials/_footer.html -->
         <footer class="footer">

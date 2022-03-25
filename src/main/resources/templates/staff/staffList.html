@@ -297,10 +297,10 @@
 
       </div>
       <script>
-      $.get("../../Nav.html", function(data){
-          $("#nav-placeholder").replaceWith(data);
-      });
-      </script>
+        $.get("/getNav", function(data){
+            $("#nav-placeholder").replaceWith(data);
+        });
+        </script>
       <!-- partial -->
       <div class="main-panel">
         <div class="content-wrapper">
@@ -312,7 +312,7 @@
                   <!-- <p class="card-description">
                     Add class <code>.table</code>
                   </p> -->
-                  <div onclick="window.location.href='../../pages/staff/newStaffForm.html'" class="table-responsive hand_crusor">
+                  <div class="table-responsive hand_crusor">
                     <table class="table">
                       <thead>
                         <tr>
@@ -324,48 +324,7 @@
                           <th></th>
                         </tr>
                       </thead>
-                      <tbody>
-                        <tr>
-                          <td>#0001</td>
-                          <td>Mohamad Ismaiel</td>
-                          <td>Call Center</td>
-                          <td>Social Media</td>
-                          <td>
-                            <label class="badge badge-danger">Terminated</label>
-                          </td>
-                          <td>
-                            <button type="button" class="btn btn-inverse-danger btn-icon">
-                                <i class="ti-slice"></i>
-                              </button></td>
-                        </tr>
-                        <tr>
-                            <td>#0001</td>
-                            <td>Mohamad Ismaiel</td>
-                            <td>Call Center</td>
-                            <td>Social Media</td>
-                            <td>
-                                <label class="badge badge-success">Active</label>
-                              </td>
-                            <td>
-                              <button type="button" class="btn btn-inverse-danger btn-icon">
-                                  <i class="ti-slice"></i>
-                                </button></td>
-                          </tr>
-                          <tr>
-                            <td>#0001</td>
-                            <td>Mohamad Ismaiel</td>
-                            <td>Call Center</td>
-                            <td>Social Media</td>
-                            <td>
-                                <label class="badge badge-success">Active</label>
-                              </td>
-                            <td>
-                              <button type="button" class="btn btn-inverse-danger btn-icon">
-                                  <i class="ti-slice"></i>
-                                </button></td>
-                          </tr>
-                        
-                     
+                      <tbody id="resultBody">    
                       </tbody>
                     </table>
                   </div>
@@ -403,6 +362,7 @@
   <script src="../../js/template.js"></script>
   <script src="../../js/settings.js"></script>
   <script src="../../js/todolist.js"></script>
+  <script src="../../js/staff/all.js"></script>
   <!-- endinject -->
   <!-- Custom js for this page-->
   <!-- End custom js for this page-->

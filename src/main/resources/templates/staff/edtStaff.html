@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 
 <head>
   <!-- Required meta tags -->
@@ -12,6 +12,8 @@
   <link rel="stylesheet" href="../../vendors/css/vendor.bundle.base.css">
   <!-- endinject -->
   <!-- Plugin css for this page -->
+  <link rel="stylesheet" href="../../vendors/select2/select2.min.css">
+  <link rel="stylesheet" href="../../vendors/select2-bootstrap-theme/select2-bootstrap.min.css">
   <!-- End plugin css for this page -->
   <!-- inject:css -->
   <link rel="stylesheet" href="../../css/vertical-layout-light/style.css">
@@ -22,6 +24,7 @@
 
 <body>
   <div class="container-scroller">
+    <input id="id"  th:value="${id}" hidden>
     <!-- partial:../../partials/_navbar.html -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
@@ -302,129 +305,336 @@
         });
         </script>
       <!-- partial -->
-      <div class="main-panel">
+      <div class="main-panel">        
         <div class="content-wrapper">
           <div class="row">
-            <div class="col-lg-12 grid-margin stretch-card">
+
+    
+        
+
+            <div class="col-12 grid-margin">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">My Employees Daily Report</h4>
-                  <!-- <p class="card-description">
-                    Add class <code>.table</code>
-                  </p> -->
+                  <h4 class="card-title">Employee Information  &nbsp;
+                    <button id="statusButton" class="btn btn-inverse-success btn-icon" onclick="terminate()">
+                        <i class="ti-user"></i>
+                    </button>
+                  </h4>
                   <form class="form-sample">
+                      <br>
                     <p class="card-description">
                   
-                      
+                
                     </p>
                     <div class="row">
-                     
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Employee</label>
-                            <div class="col-sm-9">
-                              <select class="form-control">
-                                <option>--Select--</option>
-                                <option>Mohamad Ahmad</option>
-                                <option>May Mohamad</option>
-                                <option>Hamza Omar</option>
-                              </select>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                              <label class="col-sm-3 col-form-label">ID</label>
+                              <div class="col-sm-9">
+                                <input type="text" class="form-control collectable" id="idd"/>
+                              </div>
                             </div>
                           </div>
-                      </div>
-                      
                       <div class="col-md-6">
                         <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Date</label>
+                          <label class="col-sm-3 col-form-label">Name</label>
                           <div class="col-sm-9">
-                            <input type="date" class="form-control" />
+                            <input type="text" class="form-control collectable" id="name" />
                           </div>
                         </div>
                       </div>
+                    
                      
                     </div>
-                  
-               
-                    <p class="card-description">
-                    
-                    </p>
-                
-                 
-                    <div class="template-demo" style="float: right;">
-                     
-                        <button type="button" class="btn btn-inverse-success btn-fw">Search</button>
-                     
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                              <label class="col-sm-3 col-form-label">Dpt</label>
+                              <div class="col-sm-9">
+                                <select class="form-control collectable" id="department">
+                                  <option>Sales</option>
+                                  <option>Customer Service</option>
+                                  <option>Call Center</option>
+                                
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                              <label class="col-sm-3 col-form-label">Postion </label>
+                              <div class="col-sm-9">
+                                <input type="text" class="form-control collectable" id="position" />
+                              </div>
+                            </div>
+                          </div>
+                       
                       </div>
-                      <br>
-                      <br>
+                      <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                              <label class="col-sm-3 col-form-label">Qualification</label>
+                              <div class="col-sm-9">
+                                <select class="form-control collectable" id="qualifications">
+                                  <option>Yes</option>
+                                  <option>No</option>
+                                 
+                                
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-group row">
+                              <label class="col-sm-3 col-form-label">Join Date</label>
+                              <div class="col-sm-9">
+                                <input type="date" class="form-control collectable" id="joinedDate"/>
+                              </div>
+                            </div>
+                          </div>
+                    </div>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Mobile </label>
+                            <div class="col-sm-9">
+                              <input type="text" class="form-control collectable" id="mobile" />
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Email</label>
+                            <div class="col-sm-9">
+                              <input type="email" class="form-control collectable" id="email" />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Evvective Date </label>
+                            <div class="col-sm-9">
+                              <input type="date" class="form-control collectable" id="effectiveDate" />
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Passport Number</label>
+                            <div class="col-sm-9">
+                              <input type="text" class="form-control collectable" id="passportNumber" />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                              <label class="col-sm-3 col-form-label">Passport Type</label>
+                              <div class="col-sm-9">
+                                <input type="text" class="form-control collectable" id="passportType" />
+                              </div>
+                            </div>
+                          </div>
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label"> DOB</label>
+                          <div class="col-sm-9">
+                            <input type="date" class="form-control collectable" id="dob" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                              <label class="col-sm-3 col-form-label">EID/UID No</label>
+                              <div class="col-sm-9">
+                                <input type="text" class="form-control collectable" id="eid" />
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-group row">
+                              <label class="col-sm-3 col-form-label">Passport Issue</label>
+                              <div class="col-sm-9">
+                                <input type="text" class="form-control collectable" id="passportIssue" />
+                              </div>
+                            </div>
+                          </div>
+                   
+           
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                              <label class="col-sm-3 col-form-label">Place of Birth</label>
+                              <div class="col-sm-9">
+                                <input type="text" class="form-control collectable" id="plcaeOfBirth" />
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-group row">
+                              <label class="col-sm-3 col-form-label">Dubai Address</label>
+                              <div class="col-sm-9">
+                                <input type="text" class="form-control collectable" id="dubaiAddress" />
+                              </div>
+                            </div>
+                          </div>
+                   
+           
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                              <label class="col-sm-3 col-form-label">Passport Expiry</label>
+                              <div class="col-sm-9">
+                                <input type="date" class="form-control collectable" id="passportValidDate" />
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-group row">
+                              <label class="col-sm-3 col-form-label">Martial Status</label>
+                              <div class="col-sm-9">
+                                <select class="form-control collectable" id="martialStatus">
+                                  <option>Single</option>
+                                  <option>Married</option>
+                                 
+                                
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+                   
+           
+                    </div>
+                
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                              <label class="col-sm-3 col-form-label">Home Country Address</label>
+                              <div class="col-sm-9">
+                                <input type="text" class="form-control collectable" id="homeAddress" />
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-group row">
+                              <label class="col-sm-3 col-form-label">Mother name</label>
+                              <div class="col-sm-9">
+                                <input type="text" class="form-control collectable" id="motherName" />
+                              </div>
+                            </div>
+                          </div>
+                   
+           
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                              <label class="col-sm-3 col-form-label">Father Name</label>
+                              <div class="col-sm-9">
+                                <input type="text" class="form-control collectable" id="fatherName" />
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <label class="col-sm-3 col-form-label">Passport Photo</label>
+                            <input id="fileupload" type="file" name="fileupload" onchange="uploadFile()" hidden required />
+                            &nbsp;<label id="photoLabel" for="fileupload" class="file-upload-browse btn btn-primary">Upload</label>
+                            <script>
+                              function open(){
+                                document.getElementById("fileupload").click;
+                          
+                              }
+                            </script>
+                          </div>
+           
+                    </div>
+
+                    <div class="row">
+                          <div class="col-md-6">
+                            <label class="col-sm-3 col-form-label">Passport/VISA/ID</label>
+                            <input id="fileupload2" type="file" name="fileupload2" onchange="uploadFile2()" hidden required />
+                            &nbsp;<label id="photoLabel2" for="fileupload2" class="file-upload-browse btn btn-danger">Upload</label>
+                            <script>
+                              function open(){
+                                document.getElementById("fileupload2").click;
+                          
+                              }
+                            </script>
+                          </div>
+
+
+              
+                          <div class="col-md-6">
+                            <label class="col-sm-3 col-form-label">Highest Degree</label>
+                            <input id="fileupload3" type="file" name="fileupload3" onchange="uploadFile3()" hidden required />
+                            &nbsp;<label id="photoLabel3" for="fileupload3" class="file-upload-browse btn btn-warning">Upload</label>
+                            <script>
+                              function open(){
+                                document.getElementById("fileupload3").click;
+                          
+                              }
+                            </script>
+                          </div>
+           
+                    </div>
+                  
+                 
+                    <div class="row">
+                        
+                   
+                      <div class="col-md-12">
+                      
+                            <div class="form-group row">
+                              <label class="col-sm-3 col-form-label"> Nationality</label>
+                              <select class="js-example-basic-single w-100 collectable" id="nationality">
+                                <option value="AL">Alabama</option>
+                                <option value="WY">Wyoming</option>
+                                <option value="AM">America</option>
+                                <option value="CA">Canada</option>
+                                <option value="RU">Russia</option>
+                              </select>
+                            </div>
+                         
+                       
+                      </div>
+
+                   
+                    </div>
                     <br>
                     <hr>
                     <br>
 
-        
-        
-         
-         
+                    <div class="template-demo" style="float: right;">
+                     
+                       
+                        <a id="passPhotoBtn" type="button" class="btn btn-inverse-primary btn-fw"> Review Passport Photo </a>
+                        <a id="passIdBtn" type="button" class="btn btn-inverse-danger btn-fw">  Review Passport/ID/VISA </a>
+                        <a id="degreeBtn" type="button" class="btn btn-inverse-warning btn-fw"> Review Degree </a>
+                        <button type="button" class="btn btn-outline-info btn-icon-text" onclick="collectForm()">Submit</button>
+                     
+                      </div>
                   </form>
-                  <div >
-                    <table class="table">
-                      <thead>
-                        <tr>
-                          <th>ID</th>
-                          <th>Name</th>
-                          <th>Department</th>
-                         
-                          <th>Export CSV</th>
-                            <th>View</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                 
-                    
-                          <tr>
-                            <td>#0001</td>
-                            <td>Mohamad Ismaiel</td>
-                            <td>Call Center</td>
-                        
-                     
-                            <td>
-                              <button type="button" class="btn btn-inverse-warning btn-icon">
-                                  <i class="ti-download"></i>
-                                </button></td>
-                                <td>
-                                  <button type="button" class="btn btn-inverse-danger btn-icon">
-                                    <i class="ti-eye"></i>
-                                  </button>
-                                </td>
-                          </tr>
-                          <tr>
-                            <td>#0002</td>
-                            <td>Mohamad Ahmad</td>
-                            <td>Customer Service</td>
-                        
-                     
-                            <td>
-                              <button type="button" class="btn btn-inverse-warning btn-icon">
-                                  <i class="ti-download"></i>
-                                </button></td>
-                                <td>
-                                  <button type="button" class="btn btn-inverse-danger btn-icon">
-                                    <i class="ti-eye"></i>
-                                  </button>
-                                </td>
-                          </tr>
-                     
-                      </tbody>
-                    </table>
-                  </div>
+
                 </div>
+                
               </div>
             </div>
-         
+           
 
-    
           </div>
         </div>
+        <!-- <div class="Security" Sec::{{let i : i%10 : i++}}> 
+
+            <section sec:permissions= "Admin , Owner , Manager , Employee,CLient" ></section>
+        </div> -->
+      
         <!-- content-wrapper ends -->
         <!-- partial:../../partials/_footer.html -->
         <footer class="footer">
@@ -444,6 +654,8 @@
   <script src="../../vendors/js/vendor.bundle.base.js"></script>
   <!-- endinject -->
   <!-- Plugin js for this page -->
+  <script src="../../vendors/typeahead.js/typeahead.bundle.min.js"></script>
+  <script src="../../vendors/select2/select2.min.js"></script>
   <!-- End plugin js for this page -->
   <!-- inject:js -->
   <script src="../../js/off-canvas.js"></script>
@@ -453,7 +665,22 @@
   <script src="../../js/todolist.js"></script>
   <!-- endinject -->
   <!-- Custom js for this page-->
+  <script src="../../js/file-upload.js"></script>
+  <script src="../../js/typeahead.js"></script>
+  <script src="../../js/select2.js"></script>
+  <script src="../../js/staff/edt.js"></script>
   <!-- End custom js for this page-->
+  <script>
+    function myFunction() {
+      var x = document.getElementById("myInput");
+      if (x.type === "password") {
+        x.type = "text";
+      } else {
+        x.type = "password";
+      }
+    }
+    </script>
+    
 </body>
 
 </html>

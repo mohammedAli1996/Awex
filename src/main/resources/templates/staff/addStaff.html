@@ -299,10 +299,10 @@
 
       </div>
       <script>
-      $.get("../../Nav.html", function(data){
-          $("#nav-placeholder").replaceWith(data);
-      });
-      </script>
+        $.get("/getNav", function(data){
+            $("#nav-placeholder").replaceWith(data);
+        });
+        </script>
       <!-- partial -->
       <div class="main-panel">        
         <div class="content-wrapper">
@@ -315,7 +315,7 @@
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Employee Information  &nbsp;
-                    <button type="button" class="btn btn-inverse-success btn-icon">
+                    <button type="button" class="btn btn-inverse-success btn-icon" hidden>
                         <i class="ti-user"></i>
                       </button>
                   </h4>
@@ -330,7 +330,7 @@
                             <div class="form-group row">
                               <label class="col-sm-3 col-form-label">ID</label>
                               <div class="col-sm-9">
-                                <input type="text" class="form-control" />
+                                <input type="text" class="form-control collectable" id="idd"/>
                               </div>
                             </div>
                           </div>
@@ -338,7 +338,7 @@
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label">Name</label>
                           <div class="col-sm-9">
-                            <input type="text" class="form-control" />
+                            <input type="text" class="form-control collectable" id="name" />
                           </div>
                         </div>
                       </div>
@@ -350,7 +350,7 @@
                             <div class="form-group row">
                               <label class="col-sm-3 col-form-label">Dpt</label>
                               <div class="col-sm-9">
-                                <select class="form-control">
+                                <select class="form-control collectable" id="department">
                                   <option>Sales</option>
                                   <option>Customer Service</option>
                                   <option>Call Center</option>
@@ -363,7 +363,7 @@
                             <div class="form-group row">
                               <label class="col-sm-3 col-form-label">Postion </label>
                               <div class="col-sm-9">
-                                <input type="text" class="form-control" />
+                                <input type="text" class="form-control collectable" id="position" />
                               </div>
                             </div>
                           </div>
@@ -374,7 +374,7 @@
                             <div class="form-group row">
                               <label class="col-sm-3 col-form-label">Qualification</label>
                               <div class="col-sm-9">
-                                <select class="form-control">
+                                <select class="form-control collectable" id="qualifications">
                                   <option>Yes</option>
                                   <option>No</option>
                                  
@@ -387,7 +387,7 @@
                             <div class="form-group row">
                               <label class="col-sm-3 col-form-label">Join Date</label>
                               <div class="col-sm-9">
-                                <input type="date" class="form-control" />
+                                <input type="date" class="form-control collectable" id="joinedDate"/>
                               </div>
                             </div>
                           </div>
@@ -397,7 +397,7 @@
                           <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Mobile </label>
                             <div class="col-sm-9">
-                              <input type="text" class="form-control" />
+                              <input type="text" class="form-control collectable" id="mobile" />
                             </div>
                           </div>
                         </div>
@@ -405,7 +405,7 @@
                           <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Email</label>
                             <div class="col-sm-9">
-                              <input type="email" class="form-control" />
+                              <input type="email" class="form-control collectable" id="email" />
                             </div>
                           </div>
                         </div>
@@ -415,7 +415,7 @@
                           <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Evvective Date </label>
                             <div class="col-sm-9">
-                              <input type="date" class="form-control" />
+                              <input type="date" class="form-control collectable" id="effectiveDate" />
                             </div>
                           </div>
                         </div>
@@ -423,7 +423,7 @@
                           <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Passport Number</label>
                             <div class="col-sm-9">
-                              <input type="text" class="form-control" />
+                              <input type="text" class="form-control collectable" id="passportNumber" />
                             </div>
                           </div>
                         </div>
@@ -433,7 +433,7 @@
                             <div class="form-group row">
                               <label class="col-sm-3 col-form-label">Passport Type</label>
                               <div class="col-sm-9">
-                                <input type="text" class="form-control" />
+                                <input type="text" class="form-control collectable" id="passportType" />
                               </div>
                             </div>
                           </div>
@@ -441,7 +441,7 @@
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label"> DOB</label>
                           <div class="col-sm-9">
-                            <input type="date" class="form-control" />
+                            <input type="date" class="form-control collectable" id="dob" />
                           </div>
                         </div>
                       </div>
@@ -451,7 +451,7 @@
                             <div class="form-group row">
                               <label class="col-sm-3 col-form-label">EID/UID No</label>
                               <div class="col-sm-9">
-                                <input type="text" class="form-control" />
+                                <input type="text" class="form-control collectable" id="eid" />
                               </div>
                             </div>
                           </div>
@@ -459,7 +459,7 @@
                             <div class="form-group row">
                               <label class="col-sm-3 col-form-label">Passport Issue</label>
                               <div class="col-sm-9">
-                                <input type="text" class="form-control" />
+                                <input type="text" class="form-control collectable" id="passportIssue" />
                               </div>
                             </div>
                           </div>
@@ -471,7 +471,7 @@
                             <div class="form-group row">
                               <label class="col-sm-3 col-form-label">Place of Birth</label>
                               <div class="col-sm-9">
-                                <input type="text" class="form-control" />
+                                <input type="text" class="form-control collectable" id="plcaeOfBirth" />
                               </div>
                             </div>
                           </div>
@@ -479,7 +479,7 @@
                             <div class="form-group row">
                               <label class="col-sm-3 col-form-label">Dubai Address</label>
                               <div class="col-sm-9">
-                                <input type="text" class="form-control" />
+                                <input type="text" class="form-control collectable" id="dubaiAddress" />
                               </div>
                             </div>
                           </div>
@@ -491,7 +491,7 @@
                             <div class="form-group row">
                               <label class="col-sm-3 col-form-label">Passport Expiry</label>
                               <div class="col-sm-9">
-                                <input type="date" class="form-control" />
+                                <input type="date" class="form-control collectable" id="passportValidDate" />
                               </div>
                             </div>
                           </div>
@@ -499,7 +499,7 @@
                             <div class="form-group row">
                               <label class="col-sm-3 col-form-label">Martial Status</label>
                               <div class="col-sm-9">
-                                <select class="form-control">
+                                <select class="form-control collectable" id="martialStatus">
                                   <option>Single</option>
                                   <option>Married</option>
                                  
@@ -517,7 +517,7 @@
                             <div class="form-group row">
                               <label class="col-sm-3 col-form-label">Home Country Address</label>
                               <div class="col-sm-9">
-                                <input type="text" class="form-control" />
+                                <input type="text" class="form-control collectable" id="homeAddress" />
                               </div>
                             </div>
                           </div>
@@ -525,7 +525,7 @@
                             <div class="form-group row">
                               <label class="col-sm-3 col-form-label">Mother name</label>
                               <div class="col-sm-9">
-                                <input type="text" class="form-control" />
+                                <input type="text" class="form-control collectable" id="motherName" />
                               </div>
                             </div>
                           </div>
@@ -537,63 +537,50 @@
                             <div class="form-group row">
                               <label class="col-sm-3 col-form-label">Father Name</label>
                               <div class="col-sm-9">
-                                <input type="text" class="form-control" />
+                                <input type="text" class="form-control collectable" id="fatherName" />
                               </div>
                             </div>
                           </div>
                           <div class="col-md-6">
-                            <div class="form-group row">
-                                <label class="col-sm-3 col-form-label">Passport Photo</label>
-                                <input type="file" name="img[]" class="file-upload-default">
-                                <div class="col-sm-6">
-                                  <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Passport photo">
-                                 
-                                </div>
-                                <div class="col-sm-2">
-                                    <span class="input-group-append" style="padding-top: 3px; float: right;">
-                                        <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
-                                      </span>
-                                 </div>
-                               
-                           </div>
+                            <label class="col-sm-3 col-form-label">Passport Photo</label>
+                            <input id="fileupload" type="file" name="fileupload" onchange="uploadFile()" hidden required />
+                            &nbsp;<label id="photoLabel" for="fileupload" class="file-upload-browse btn btn-primary">Upload</label>
+                            <script>
+                              function open(){
+                                document.getElementById("fileupload").click;
+                          
+                              }
+                            </script>
                           </div>
            
                     </div>
 
                     <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group row">
-                                <label class="col-sm-3 col-form-label">Passport/VISA/ID</label>
-                                <input type="file" name="img[]" class="file-upload-default">
-                                <div class="col-sm-6">
-                                  <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Passport/VISA/ID">
-                                 
-                                </div>
-                                <div class="col-sm-2">
-                                    <span class="input-group-append" style="padding-top: 3px; float: right;">
-                                        <button class="file-upload-browse btn btn-danger" type="button">Upload</button>
-                                      </span>
-                                 </div>
-                               
-                           </div>
-                          </div>
                           <div class="col-md-6">
-                            <div class="form-group row">
-                                <label class="col-sm-3 col-form-label">Highest Degree</label>
-                                <input type="file" name="img[]" class="file-upload-default">
-                                <div class="col-sm-6">
-                                  <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Degree">
-                                 
-                                </div>
-                                <div class="col-sm-2">
-                                    <span class="input-group-append" style="padding-top: 3px; float: right;">
-                                        <button class="file-upload-browse btn btn-warning" type="button">Upload</button>
-                                      </span>
-                                 </div>
-                               
-                           </div>
+                            <label class="col-sm-3 col-form-label">Passport/VISA/ID</label>
+                            <input id="fileupload2" type="file" name="fileupload2" onchange="uploadFile2()" hidden required />
+                            &nbsp;<label id="photoLabel2" for="fileupload2" class="file-upload-browse btn btn-danger">Upload</label>
+                            <script>
+                              function open(){
+                                document.getElementById("fileupload2").click;
+                          
+                              }
+                            </script>
                           </div>
-                   
+
+
+              
+                          <div class="col-md-6">
+                            <label class="col-sm-3 col-form-label">Highest Degree</label>
+                            <input id="fileupload3" type="file" name="fileupload3" onchange="uploadFile3()" hidden required />
+                            &nbsp;<label id="photoLabel3" for="fileupload3" class="file-upload-browse btn btn-warning">Upload</label>
+                            <script>
+                              function open(){
+                                document.getElementById("fileupload3").click;
+                          
+                              }
+                            </script>
+                          </div>
            
                     </div>
                   
@@ -605,7 +592,7 @@
                       
                             <div class="form-group row">
                               <label class="col-sm-3 col-form-label"> Nationality</label>
-                              <select class="js-example-basic-single w-100">
+                              <select class="js-example-basic-single w-100 collectable" id="nationality">
                                 <option value="AL">Alabama</option>
                                 <option value="WY">Wyoming</option>
                                 <option value="AM">America</option>
@@ -626,10 +613,10 @@
                     <div class="template-demo" style="float: right;">
                      
                        
-                        <button type="button" class="btn btn-inverse-primary btn-fw">Review Photo</button>
-                        <button type="button" class="btn btn-inverse-danger btn-fw">  Review Passport/ID/VISA </button>
-                        <button type="button" class="btn btn-inverse-warning btn-fw">Review Degree</button>
-                        <button type="button" class="btn btn-outline-info btn-icon-text">Submit</button>
+                        <a id="passPhotoBtn" type="button" class="btn btn-inverse-primary btn-fw" hidden> Review Passport Photo </a>
+                        <a id="passIdBtn" type="button" class="btn btn-inverse-danger btn-fw" hidden>  Review Passport/ID/VISA </a>
+                        <a id="degreeBtn" type="button" class="btn btn-inverse-warning btn-fw" hidden> Review Degree </a>
+                        <button type="button" class="btn btn-outline-info btn-icon-text" onclick="collectForm()">Submit</button>
                      
                       </div>
                   </form>
@@ -642,10 +629,10 @@
 
           </div>
         </div>
-        <div class="Security" Sec::{{let i : i%10 : i++}}> 
+        <!-- <div class="Security" Sec::{{let i : i%10 : i++}}> 
 
             <section sec:permissions= "Admin , Owner , Manager , Employee,CLient" ></section>
-        </div>
+        </div> -->
       
         <!-- content-wrapper ends -->
         <!-- partial:../../partials/_footer.html -->
@@ -680,6 +667,7 @@
   <script src="../../js/file-upload.js"></script>
   <script src="../../js/typeahead.js"></script>
   <script src="../../js/select2.js"></script>
+  <script src="../../js/staff/addStaff.js"></script>
   <!-- End custom js for this page-->
   <script>
     function myFunction() {
