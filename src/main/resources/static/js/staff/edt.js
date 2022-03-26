@@ -161,9 +161,11 @@ function terminate(){
         timeout: 600000,
         success: function (data) {
             if(currStatus=="Active"){
-                document.getElementById("statusButton").className = "btn btn-inverse-success btn-icon";
-            }else{
                 document.getElementById("statusButton").className = "btn btn-inverse-danger btn-icon";
+                currStatus = "Terminated";
+            }else{
+                document.getElementById("statusButton").className = "btn btn-inverse-success btn-icon";
+                currStatus = "Active" ; 
             }
         },
         error: function (e) {
