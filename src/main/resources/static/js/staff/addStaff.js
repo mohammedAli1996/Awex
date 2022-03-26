@@ -70,7 +70,7 @@ function collectForm() {
         success: function (data) {
             console.log("Success");
             console.log(data);
-            window.location = "/allStaff";
+            window.location = "/staffList";
         },
         error: function (e) {
             console.log(e);

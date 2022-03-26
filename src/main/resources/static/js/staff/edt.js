@@ -45,6 +45,15 @@ async function uploadFile() {
   }
 
 
+  function formatDate(date){
+    date = new Date(date);
+    const day = `${date.getDate() < 10 ? '0' : ''}${date.getDate()}`;
+    const month = `${date.getMonth() + 1 < 10 ? '0' : ''}${date.getMonth() + 1}`;
+    const year = date.getFullYear();
+    return `${year}-${month}-${day}`;
+}
+
+
 $(document).ready(function () {
 
     id = document.getElementById("id").value;
@@ -62,18 +71,18 @@ $(document).ready(function () {
             document.getElementById("department").value = data.department;
             document.getElementById("position").value = data.position;
             document.getElementById("qualifications").value = data.qualifications;
-            document.getElementById("joinedDate").value = data.joinedDate;
+            document.getElementById("joinedDate").value = formatDate(data.joinedDate);
             document.getElementById("mobile").value = data.mobile;
             document.getElementById("email").value = data.email;
-            document.getElementById("effectiveDate").value = data.effectiveDate;
+            document.getElementById("effectiveDate").value = formatDate(data.effectiveDate);
             document.getElementById("passportNumber").value = data.passportNumber;
             document.getElementById("passportType").value = data.passportType;
-            document.getElementById("dob").value = data.dob;
+            document.getElementById("dob").value = formatDate(data.dob);
             document.getElementById("eid").value = data.eid;
             document.getElementById("passportIssue").value = data.passportIssue;
             document.getElementById("plcaeOfBirth").value = data.plcaeOfBirth;
             document.getElementById("dubaiAddress").value = data.dubaiAddress;
-            document.getElementById("passportValidDate").value = data.passportValidDate;
+            document.getElementById("passportValidDate").value = formatDate(data.passportValidDate);
             document.getElementById("martialStatus").value = data.martialStatus;
             document.getElementById("homeAddress").value = data.homeAddress;
             document.getElementById("motherName").value = data.motherName;
@@ -137,7 +146,7 @@ function collectForm(){
         success: function (data) {
             console.log("Success");
             console.log(data);
-            window.location = "/allStaff";
+            window.location = "/staffList";
         },
         error: function (e) {
             console.log(e);
