@@ -37,7 +37,7 @@ public class HomeController {
     		user.setPassword(new BCryptPasswordEncoder().encode("Support@Admin123"));
     		user.addRole("owner");
     		user.addPermission("owner");
-    		user.setRepoId(10);
+    		user.setRepoId(-1);
     		this.userRepository.save(user);
     	}  
 	}
