@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 
 <head>
   <!-- Required meta tags -->
@@ -17,12 +17,13 @@
   <!-- End plugin css for this page -->
   <!-- inject:css -->
   <link rel="stylesheet" href="../../css/vertical-layout-light/style.css">
+  <link rel="stylesheet" href="../../vendors/mdi/css/materialdesignicons.min.css">
   <!-- endinject -->
   <link rel="shortcut icon" href="../../images/favicon.png" />
-  <link rel="stylesheet" href="../../vendors/mdi/css/materialdesignicons.min.css">
 </head>
 
 <body>
+    <input id="id"  th:value="${id}" hidden>
   <div class="container-scroller">
     <!-- partial:../../partials/_navbar.html -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
@@ -314,86 +315,95 @@
             <div class="col-12 grid-margin">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Reports Review</h4>
+                  <h4 class="card-title">Edit User</h4>
                   <form class="form-sample">
                     <p class="card-description">
                   
-                      
                     </p>
                     <div class="row">
-                     
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Employee</label>
-                            <div class="col-sm-9">
-                              <select class="form-control" id="staffDropDown">
-                                <option value="-1">--select--</option>
-                              </select>
-                            </div>
-                          </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Department</label>
-                            <div class="col-sm-9">
-                              <select class="form-control" id="department">
-                                <option value="">--Select--</option>
-                                <option value="Call Center">Call Center</option>
-                                <option value="Customer Service">Customer Service</option>
-                                <option value="Sales">Sales</option>
-                              </select>
-                            </div>
-                          </div>
-                      </div>
+                      
+                    
                      
                     </div>
-                  
+               
                     <div class="row">
-                     
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">Employee</label>
+                          <div class="col-sm-9">
+                            <select class="form-control collectable" id="repoId" disabled>
+                             
+                            </select>
+                          </div>
+                        </div>
+                      </div>
                         <div class="col-md-6">
                             <div class="form-group row">
-                              <label class="col-sm-3 col-form-label">Date</label>
+                              <label class="col-sm-3 col-form-label">Email Address</label>
                               <div class="col-sm-9">
-                                <input type="date" class="form-control" id="date" />
+                                <input type="email" class="form-control collectable" id="username" />
                               </div>
                             </div>
                           </div>
-                      
-                      </div>
+                        
                    
+           
+                    </div>
                     <p class="card-description">
                     
                     </p>
-                
+                  
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">Password</label>
+                          <div class="col-sm-9">
+                            <input id="password" type="password" class="form-control collectable" />
+                            <input class="hand_crusor" type="checkbox" onclick="myFunction()"> <small>Show Password</small> 
+                          </div>
+                        </div>
+                      </div>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                              <label class="col-sm-3 col-form-label">Role</label>
+                              <div class="col-sm-9">
+                                <select id="userRoles" class="form-control collectable" onchange="checkReportTo(this.value)">
+                                  <option value="Owner">Owner</option>
+                                  <option value="Admin">Admin</option>
+                                  <option value="Manager">Manager</option>
+                                  <option value="Employee">Employee </option>
+                                 
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+
+
+                      
+
+
+                    </div>
                  
+                    <div class="row" id="reportToField" hidden>
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">Report To</label>
+                          <div class="col-sm-9">
+                            <select class="form-control collectable" id="reportTo">             
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <label style="color: red;" id="msgholder"></label>
                     <div class="template-demo" style="float: right;">
                      
-                        <button type="button" class="btn btn-inverse-success btn-fw" onclick="filterReports()" >Search</button>
+                        <button type="button" class="btn btn-outline-info btn-icon-text" onclick="addUser()">
+                          Submit
+                                                                                                    
+                        </button>
                      
                       </div>
-                      <br>
-                      <br>
-                    <br>
-                    <hr>
-                    <br>
-                    <table class="table">
-                        <thead>
-                          <tr>
-                            <th>ID</th>
-                            <th>Name</th>
-                            <th>Department</th>
-                           
-                            <th></th>
-                          </tr>
-                        </thead>
-                        <tbody id="resBody">       
-                        </tbody>
-                      </table>
-            
-        
-        
-         
-         
                   </form>
 
                 </div>
@@ -441,11 +451,11 @@
   <script src="../../js/file-upload.js"></script>
   <script src="../../js/typeahead.js"></script>
   <script src="../../js/select2.js"></script>
-  <script src="../../js/reports/reportsList.js"></script>
+  <script src="../../js/users/updateUser.js"></script>
   <!-- End custom js for this page-->
   <script>
     function myFunction() {
-      var x = document.getElementById("myInput");
+      var x = document.getElementById("password");
       if (x.type === "password") {
         x.type = "text";
       } else {

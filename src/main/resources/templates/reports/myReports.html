@@ -12,8 +12,6 @@
   <link rel="stylesheet" href="../../vendors/css/vendor.bundle.base.css">
   <!-- endinject -->
   <!-- Plugin css for this page -->
-  <link rel="stylesheet" href="../../vendors/select2/select2.min.css">
-  <link rel="stylesheet" href="../../vendors/select2-bootstrap-theme/select2-bootstrap.min.css">
   <!-- End plugin css for this page -->
   <!-- inject:css -->
   <link rel="stylesheet" href="../../css/vertical-layout-light/style.css">
@@ -304,63 +302,34 @@
         });
         </script>
       <!-- partial -->
-      <div class="main-panel">        
+      <div class="main-panel">
         <div class="content-wrapper">
           <div class="row">
-
-    
-        
-
-            <div class="col-12 grid-margin">
+            <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Reports Review</h4>
+                  <h4 class="card-title">My Report</h4>
+                  <!-- <p class="card-description">
+                    Add class <code>.table</code>
+                  </p> -->
                   <form class="form-sample">
                     <p class="card-description">
                   
                       
                     </p>
                     <div class="row">
-                     
                       <div class="col-md-6">
                         <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Employee</label>
-                            <div class="col-sm-9">
-                              <select class="form-control" id="staffDropDown">
-                                <option value="-1">--select--</option>
-                              </select>
-                            </div>
+                          <label class="col-sm-3 col-form-label">Date</label>
+                          <div class="col-sm-9">
+                            <input type="date" class="form-control" id="date" />
                           </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Department</label>
-                            <div class="col-sm-9">
-                              <select class="form-control" id="department">
-                                <option value="">--Select--</option>
-                                <option value="Call Center">Call Center</option>
-                                <option value="Customer Service">Customer Service</option>
-                                <option value="Sales">Sales</option>
-                              </select>
-                            </div>
-                          </div>
+                        </div>
                       </div>
                      
                     </div>
                   
-                    <div class="row">
-                     
-                        <div class="col-md-6">
-                            <div class="form-group row">
-                              <label class="col-sm-3 col-form-label">Date</label>
-                              <div class="col-sm-9">
-                                <input type="date" class="form-control" id="date" />
-                              </div>
-                            </div>
-                          </div>
-                      
-                      </div>
-                   
+               
                     <p class="card-description">
                     
                     </p>
@@ -368,7 +337,7 @@
                  
                     <div class="template-demo" style="float: right;">
                      
-                        <button type="button" class="btn btn-inverse-success btn-fw" onclick="filterReports()" >Search</button>
+                        <button type="button" class="btn btn-inverse-success btn-fw" onclick="filterReports()">Search</button>
                      
                       </div>
                       <br>
@@ -376,38 +345,37 @@
                     <br>
                     <hr>
                     <br>
-                    <table class="table">
-                        <thead>
-                          <tr>
-                            <th>ID</th>
-                            <th>Name</th>
-                            <th>Department</th>
-                           
-                            <th></th>
-                          </tr>
-                        </thead>
-                        <tbody id="resBody">       
-                        </tbody>
-                      </table>
-            
+
         
         
          
          
                   </form>
-
+                  <div >
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th>ID</th>
+                          <th>Name</th>
+                          <th>Department</th>
+                         
+                          <th>Export CSV</th>
+                            <th>View</th>
+                        </tr>
+                      </thead>
+                      <tbody id="resBody">
+                     
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
-                
               </div>
             </div>
-           
+         
 
+    
           </div>
         </div>
-        <!-- <div class="Security" Sec::{{let i : i%10 : i++}}> 
-
-            <section sec:permissions= "Admin , Owner , Manager , Employee,CLient" ></section>
-        </div> -->
         <!-- content-wrapper ends -->
         <!-- partial:../../partials/_footer.html -->
         <footer class="footer">
@@ -427,8 +395,6 @@
   <script src="../../vendors/js/vendor.bundle.base.js"></script>
   <!-- endinject -->
   <!-- Plugin js for this page -->
-  <script src="../../vendors/typeahead.js/typeahead.bundle.min.js"></script>
-  <script src="../../vendors/select2/select2.min.js"></script>
   <!-- End plugin js for this page -->
   <!-- inject:js -->
   <script src="../../js/off-canvas.js"></script>
@@ -436,24 +402,11 @@
   <script src="../../js/template.js"></script>
   <script src="../../js/settings.js"></script>
   <script src="../../js/todolist.js"></script>
+  <script src="../../js/reports/myReports.js"></script>
+
   <!-- endinject -->
   <!-- Custom js for this page-->
-  <script src="../../js/file-upload.js"></script>
-  <script src="../../js/typeahead.js"></script>
-  <script src="../../js/select2.js"></script>
-  <script src="../../js/reports/reportsList.js"></script>
   <!-- End custom js for this page-->
-  <script>
-    function myFunction() {
-      var x = document.getElementById("myInput");
-      if (x.type === "password") {
-        x.type = "text";
-      } else {
-        x.type = "password";
-      }
-    }
-    </script>
-    
 </body>
 
 </html>

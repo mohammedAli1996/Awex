@@ -13,5 +13,7 @@ public interface UserRepository extends JpaRepository<Usersys,Integer>{
 	
 	int countByUsername(String isername);
 	
+	int countByRepoId(int repoId);
+	
 	public int countByrepoId(int repoId);
 }

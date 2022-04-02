@@ -44,7 +44,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 		.antMatchers("/index").authenticated()
 		
 		.and()
-		.authorizeRequests().anyRequest().permitAll()
+		.authorizeRequests().anyRequest().authenticated()
 		.and()
 		.exceptionHandling().accessDeniedPage("/forbidden")
 		.and()

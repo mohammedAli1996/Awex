@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.awex.awex.management.hiring.IBK;
 import com.awex.awex.management.utils.AjaxResponseBody;
 
 @RestController
@@ -46,6 +47,12 @@ public class StaffController {
 			 return ResponseEntity.badRequest().body(result);
 		 }  
 	  }    
+	
+	
+	@PostMapping("/testststs")
+	public IBK test(@RequestBody IBK tt ) {
+		return tt ; 
+	}
 	  
 	@GetMapping("/staffList")
     public ModelAndView staffList() {

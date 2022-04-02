@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 
 <head>
   <!-- Required meta tags -->
@@ -28,6 +28,7 @@
 </head>
 
 <body>
+  <input id="reportId"  th:value="${reportId}" hidden>
     <script>
         $(document).on('change', '.file-input', function() {
 
@@ -796,7 +797,7 @@ textbox.text(filesCount + ' files selected');
                     <label style="color: red;" id="msgholder"></label>
                     <div style="text-align: right;">
                    
-                      <button type="button" class="add btn btn-primary todo-list-add-btn" id="add-task" onclick="addReport()">Save</button>
+                      <button type="button" class="add btn btn-primary todo-list-add-btn" id="add-task" onclick="addReport()">update</button>
                     </div>
                   </form>
                 </div>
@@ -841,7 +842,7 @@ textbox.text(filesCount + ' files selected');
   <script src="../../js/file-upload.js"></script>
   <script src="../../js/typeahead.js"></script>
   <script src="../../js/select2.js"></script>
-  <script src="../../js/reports/addReports.js"></script>
+  <script src="../../js/reports/updateReports.js"></script>
   <!-- End custom js for this page-->
   <script>
     function myFunction() {

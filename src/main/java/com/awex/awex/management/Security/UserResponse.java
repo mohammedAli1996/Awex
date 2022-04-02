@@ -12,6 +12,10 @@ public class UserResponse {
 	private String repoName ;
 	
 	private String role ; 
+	
+	private boolean active ; 
+	
+	private String department ;
 
 	public UserResponse() {}
 		
@@ -25,7 +29,21 @@ public class UserResponse {
 	}
 
 
+	public String getDepartment() {
+		return department;
+	}
 
+	public void setDepartment(String department) {
+		this.department = department;
+	}
+
+	public boolean isActive() {
+		return active;
+	}
+
+	public void setActive(boolean active) {
+		this.active = active;
+	}
 
 	public int getId() {
 		return id;

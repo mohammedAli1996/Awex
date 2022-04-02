@@ -323,11 +323,8 @@
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Employee</label>
                             <div class="col-sm-9">
-                              <select class="form-control">
-                                <option>--Select--</option>
-                                <option>Mohamad Ahmad</option>
-                                <option>May Mohamad</option>
-                                <option>Hamza Omar</option>
+                              <select class="form-control" id="staffDropDown">
+                               <option value="-1">--select--</option>
                               </select>
                             </div>
                           </div>
@@ -337,7 +334,7 @@
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label">Date</label>
                           <div class="col-sm-9">
-                            <input type="date" class="form-control" />
+                            <input type="date" class="form-control" id="date" />
                           </div>
                         </div>
                       </div>
@@ -352,7 +349,7 @@
                  
                     <div class="template-demo" style="float: right;">
                      
-                        <button type="button" class="btn btn-inverse-success btn-fw">Search</button>
+                        <button type="button" class="btn btn-inverse-success btn-fw" onclick="filterReports()">Search</button>
                      
                       </div>
                       <br>
@@ -378,41 +375,7 @@
                             <th>View</th>
                         </tr>
                       </thead>
-                      <tbody>
-                 
-                    
-                          <tr>
-                            <td>#0001</td>
-                            <td>Mohamad Ismaiel</td>
-                            <td>Call Center</td>
-                        
-                     
-                            <td>
-                              <button type="button" class="btn btn-inverse-warning btn-icon">
-                                  <i class="ti-download"></i>
-                                </button></td>
-                                <td>
-                                  <button type="button" class="btn btn-inverse-danger btn-icon">
-                                    <i class="ti-eye"></i>
-                                  </button>
-                                </td>
-                          </tr>
-                          <tr>
-                            <td>#0002</td>
-                            <td>Mohamad Ahmad</td>
-                            <td>Customer Service</td>
-                        
-                     
-                            <td>
-                              <button type="button" class="btn btn-inverse-warning btn-icon">
-                                  <i class="ti-download"></i>
-                                </button></td>
-                                <td>
-                                  <button type="button" class="btn btn-inverse-danger btn-icon">
-                                    <i class="ti-eye"></i>
-                                  </button>
-                                </td>
-                          </tr>
+                      <tbody id="resBody">
                      
                       </tbody>
                     </table>
@@ -451,6 +414,8 @@
   <script src="../../js/template.js"></script>
   <script src="../../js/settings.js"></script>
   <script src="../../js/todolist.js"></script>
+  <script src="../../js/reports/myEmpsReports.js"></script>
+
   <!-- endinject -->
   <!-- Custom js for this page-->
   <!-- End custom js for this page-->

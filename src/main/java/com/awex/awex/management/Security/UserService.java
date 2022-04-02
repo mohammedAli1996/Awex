@@ -10,7 +10,9 @@ import javax.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
+import com.awex.awex.management.staff.StaffService;
 import com.awex.awex.management.utils.ServiceException;
 
 
@@ -39,38 +41,58 @@ public class UserService {
 	 
 	/*Getters*/
 	
+	@Autowired
+	private StaffService staffService ;
+	
 	public Usersys addUser(Usersys request ) {
 		if(userRepository.countByUsername(request.getUsername()) > 0 ) {
-			throw new ServiceException("User name should be unique ");
+			throw new ServiceException("Email already linked to a user");
 		}
-		System.out.println(request.getUsername());
-		System.out.println(request.getPassword());
-		System.out.println(new BCryptPasswordEncoder().encode(request.getPassword()));
+		if(userRepository.countByrepoId(request.getRepoId()) > 0 ) {
+			throw new ServiceException("Employee already has a user ");
+		}
+		request.setEmployeeName(staffService.findById(request.getRepoId()).getName());
+		request.setDepartment(staffService.findById(request.getRepoId()).getDepartment());
+		if(!request.getUserRoles().equalsIgnoreCase("Employee")) {
+			request.setReportTo(-1);
+		}
 		request.setPassword(new BCryptPasswordEncoder().encode(request.getPassword()));
-		request.addRole("user");
-		request.addPermission("user");
-		request.setRepoId(10);
-		return userRepository.save(request);
+		request.addPermission("user");  
+		return userRepository.save(request);  
 	}        
 	
+	
+	public Usersys updateUser(Usersys request , int userId  ) {
+		Usersys db = getUser(userId);
+		db.setId(userId);
+		if(!db.getUsername().equals(request.getUsername())) {
+			if(userRepository.countByUsername(request.getUsername()) > 0 ) {
+				throw new ServiceException("Email already linked to a user");    
+			}   
+		}
+		db.setUsername(request.getUsername());
+		db.setEmployeeName(staffService.findById(request.getRepoId()).getName());
+		db.setDepartment(staffService.findById(request.getRepoId()).getDepartment());
+		if(!request.getUserRoles().equalsIgnoreCase("Employee")) { 
+			db.setReportTo(-1);  
+		}else { 
+			db.setReportTo(request.getReportTo());  
+		}    
+		db.setUserRoles(request.getUserRoles());
+		if(request.getPassword() != null && !StringUtils.isEmpty(request.getPassword())) {
+			db.setPassword(new BCryptPasswordEncoder().encode(request.getPassword()));
+		}
+		return userRepository.save(db);  
+	}  
+	
+	
+	
 	public List<UserResponse> getAllUsers(boolean active){
-		List<UserResponse> users = new ArrayList<UserResponse>();
-		//Usersys curr = masterService.get_current_User() ; 
+		List<UserResponse> users = new ArrayList<UserResponse>();  
 		for(Usersys user : userRepository.findAll()) {
-//			if(user.getUserRoles().equals("owner") || user.getUserRoles().equals("manager")) {
-//				continue ; 
-//			}
 			if(user.isActive() != active) {
 				continue ;
 			}
-//			if("owner".equalsIgnoreCase(user.getUserRoles())) {
-//				continue ; 
-//			}
-//			if(!curr.getUserRoles().equals("owner")) {
-//				if(user.getRepoId() != curr.getRepoId()) {
-//					continue ;
-//				}
-//			}
 			UserResponse response = new UserResponse();
 			response.setEmployeeName(user.getEmployeeName());
 			response.setId(user.getId());
@@ -81,12 +103,27 @@ public class UserService {
 		return users ; 
 	}
 	
-	private Usersys getUser(int id ) {
+	public List<UserResponse> getAllUsers(){
+		List<UserResponse> users = new ArrayList<UserResponse>();   
+		for(Usersys user : userRepository.findAll()) {
+			UserResponse response = new UserResponse();
+			response.setActive(user.isActive());
+			response.setEmployeeName(user.getEmployeeName());
+			response.setId(user.getId());
+			response.setUserName(user.getUsername());
+			response.setDepartment(user.getDepartment());
+			response.setRole(user.getUserRoles());
+			users.add(response);
+		}
+		return users ; 
+	}
+	
+	public Usersys getUser(int id ) {
 		Optional<Usersys> optional = this.userRepository.findById(id);
 		if(optional.isPresent()) {
 			return optional.get();
 		}
-		throw new ServiceException("لم يتم العثور على المستخدم");
+		throw new ServiceException("User Not found");
 	}
 
 	
@@ -140,4 +177,6 @@ public class UserService {
 		}
 		return this.userRepository.countByrepoId(masterService.get_current_User().getRepoId());
 	}
+
+	
 }

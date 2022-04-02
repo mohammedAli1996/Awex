@@ -8,26 +8,29 @@ import java.util.List;
 import javax.persistence.*;
 
 @Entity
-public class Usersys {
+public class Usersys {  
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)   
 	private int id ;
 
 	@Column(nullable = false )
 	private String password ;
 	private String username ;
-	private String UserPermissions = "none" ;
-	private String UserRoles ="none";
+	private String UserPermissions = "none" ;  
+	private String userRoles ="none";
 	private int repoId ; 
-	private String employeeName ; 
+	private String employeeName ;   
 	private Date createdAt ; 
 	private boolean Active = true ; 
-	private String userSeq ;   
-
+	private String userSeq ;       
+	private int reportTo ; 
+	private String department ; 
+	
+	
 	public Usersys() {
 		this.createdAt = new Date();
 		UserPermissions = " ";
-		UserRoles = " ";
+		userRoles = " ";  
 	}
 
 	public Usersys(int id, String password, String username, String userPermissions, String userRoles, int repoId,
@@ -37,7 +40,7 @@ public class Usersys {
 		this.password = password;
 		this.username = username;
 		UserPermissions = userPermissions;
-		UserRoles = userRoles;
+		this.userRoles = userRoles;
 		this.repoId = repoId;
 		this.employeeName = employeeName;
 		this.createdAt = createdAt;
@@ -47,7 +50,21 @@ public class Usersys {
 
 
 
+	public String getDepartment() {
+		return department;
+	}
 
+	public void setDepartment(String department) {
+		this.department = department;
+	}
+
+	public int getReportTo() {
+		return reportTo;
+	}
+
+	public void setReportTo(int reportTo) {
+		this.reportTo = reportTo;
+	}
 
 	public int getId() {
 		return id;
@@ -82,11 +99,11 @@ public class Usersys {
 	}
 
 	public String getUserRoles() {
-		return UserRoles;
+		return userRoles;
 	}
 
 	public void setUserRoles(String userRoles) {
-		UserRoles = userRoles;
+		this.userRoles = userRoles;
 	}
 
 	public boolean isActive() {
@@ -115,7 +132,7 @@ public class Usersys {
 	}
 
 	public boolean hasRole(String role) {
-		if(this.UserRoles.equalsIgnoreCase(" ")) {
+		if(this.userRoles.equalsIgnoreCase(" ")) {
 			return false ; 
 		}
 		else if (!this.convertRolesToList().contains(role)) {
@@ -135,7 +152,7 @@ public class Usersys {
 	}
 
 	public void addRole(String role ) {
-		this.UserRoles = role ; 
+		this.userRoles = role ; 
 	}
 	
 	public void addPermission(String permission ) {
@@ -165,12 +182,12 @@ public class Usersys {
 	}
 	
 	public List<String> convertRolesToList(){
-		if(this.UserRoles.equalsIgnoreCase("")) {
+		if(this.userRoles.equalsIgnoreCase("")) {
 			return null ; 
 		}
 		else {
 			List<String> userRoles = new ArrayList<String>() ;
-			String[] roles = this.UserRoles.split(",");
+			String[] roles = this.userRoles.split(",");
 			for(int i =0 ; i < roles.length ; i++) {
 				userRoles.add(roles[i]); 
 			}
@@ -184,7 +201,7 @@ public class Usersys {
 		if(userRoles.size() != 0 ) {
 		if(userRoles.contains(role)) {
 			userRoles.remove(userRoles.indexOf(role));
-			this.UserRoles = "";
+			this.userRoles = "";
 			for(String tempRole : userRoles) {
 				this.addRole(tempRole);
 				}

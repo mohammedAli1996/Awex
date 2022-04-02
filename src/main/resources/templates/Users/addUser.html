@@ -330,10 +330,8 @@
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label">Employee</label>
                           <div class="col-sm-9">
-                            <select class="form-control">
-                              <option>MOhamad</option>
-                              <option>shreya</option>
-                              <option>ahmad</option>
+                            <select class="form-control collectable" id="repoId">
+                             
                             </select>
                           </div>
                         </div>
@@ -342,7 +340,7 @@
                             <div class="form-group row">
                               <label class="col-sm-3 col-form-label">Email Address</label>
                               <div class="col-sm-9">
-                                <input type="email" class="form-control" />
+                                <input type="email" class="form-control collectable" id="username" />
                               </div>
                             </div>
                           </div>
@@ -359,7 +357,7 @@
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label">Password</label>
                           <div class="col-sm-9">
-                            <input id="myInput" type="password" class="form-control" />
+                            <input id="password" type="password" class="form-control collectable" />
                             <input class="hand_crusor" type="checkbox" onclick="myFunction()"> <small>Show Password</small> 
                           </div>
                         </div>
@@ -368,11 +366,11 @@
                             <div class="form-group row">
                               <label class="col-sm-3 col-form-label">Role</label>
                               <div class="col-sm-9">
-                                <select class="form-control">
-                                  <option>Owner</option>
-                                  <option>Admin</option>
-                                  <option>Manager</option>
-                                  <option>Employee </option>
+                                <select id="userRoles" class="form-control collectable" onchange="checkReportTo(this.value)">
+                                  <option value="Owner">Owner</option>
+                                  <option value="Admin">Admin</option>
+                                  <option value="Manager">Manager</option>
+                                  <option value="Employee">Employee </option>
                                  
                                 </select>
                               </div>
@@ -385,27 +383,21 @@
 
                     </div>
                  
-                    <div class="row">
+                    <div class="row" id="reportToField" hidden>
                       <div class="col-md-6">
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label">Report To</label>
                           <div class="col-sm-9">
-                            <select class="form-control">
-                              <option>KIKI Zeng</option>
-                              <option>Mr Deng</option>
-                              <option>Jacoub </option>
-                             
+                            <select class="form-control collectable" id="reportTo">             
                             </select>
                           </div>
                         </div>
                       </div>
-
-                    
-                   
                     </div>
+                    <label style="color: red;" id="msgholder"></label>
                     <div class="template-demo" style="float: right;">
                      
-                        <button type="button" class="btn btn-outline-info btn-icon-text">
+                        <button type="button" class="btn btn-outline-info btn-icon-text" onclick="addUser()">
                           Submit
                                                                                                     
                         </button>
@@ -458,10 +450,11 @@
   <script src="../../js/file-upload.js"></script>
   <script src="../../js/typeahead.js"></script>
   <script src="../../js/select2.js"></script>
+  <script src="../../js/users/addUser.js"></script>
   <!-- End custom js for this page-->
   <script>
     function myFunction() {
-      var x = document.getElementById("myInput");
+      var x = document.getElementById("password");
       if (x.type === "password") {
         x.type = "text";
       } else {
