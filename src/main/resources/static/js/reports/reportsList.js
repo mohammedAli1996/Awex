@@ -36,7 +36,7 @@ function filterReports() {
         timeout: 600000,
         success: function (data) {
             for (var i = 0; i < data.length; i++) {
-                document.getElementById("resBody").innerHTML += "<tr><td>"+data[i].empId+"</td><td>" + data[i].empName + "</td><td>" + data[i].department + "</td><td><button type='button' class='btn btn-inverse-warning btn-icon' onclick='download("+data[i].id+")'><i class='ti-download'></i></button></td></tr>"
+                document.getElementById("resBody").innerHTML += "<tr><td>"+data[i].empId+"</td><td>" + data[i].empName + "</td><td>" + data[i].department + "</td><td><button type='button' class='btn btn-inverse-warning btn-icon' onclick='download("+data[i].id+")'><i class='ti-download'></i></button></td><td><button type='button' class='btn btn-inverse-danger btn-icon' onclick='getReport("+data[i].id+")'><i class='ti-eye'></i></button></td></tr>"
             }
         },
         error: function (e) {
@@ -45,6 +45,7 @@ function filterReports() {
     });
 
 }
+
 
 
 
@@ -76,4 +77,8 @@ function download(reportId) {
     });
 
     
+}
+
+function getReport(reportId){
+    window.location = "/getReport/"+reportId;
 }
