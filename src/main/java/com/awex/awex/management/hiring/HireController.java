@@ -1,7 +1,5 @@
 package com.awex.awex.management.hiring;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -67,9 +65,9 @@ public class HireController {
 		return mav ; 
 	}
 	
-	@PostMapping("/filterHiresList")
-	public List<HireModel> filterAllHiresList(@RequestBody Filter filter) {
-		return hireService.getAllHires(filter);
+	@PostMapping("/filterHiresList/{pageNumber}")
+	public Response filterAllHiresList(@RequestBody Filter filter , @PathVariable int pageNumber) {
+		return hireService.getAllHires(filter,pageNumber);
 	}
 	
 	@GetMapping("/getHireView/{id}")

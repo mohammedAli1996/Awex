@@ -8,6 +8,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.awex.awex.management.Utils;
 import com.awex.awex.management.utils.ServiceException;
 
 @Service
@@ -40,10 +41,9 @@ public class HireService {
 		return hireRepository.save(request).getId();
 	}
 	
-	public List<HireModel> getAllHires(Filter filter){
+	public Response getAllHires(Filter filter, int pageNumber){
 		List<HireModel> response = new ArrayList<HireModel>();
 		for(HireModel model :hireRepository.findAll()) {
-			
 			if(checkString(filter.getStatus()) &&  !filter.getStatus().equals(model.getStatus())) {
 				continue ;
 			}
@@ -52,7 +52,21 @@ public class HireService {
 			}
 			response.add(model);
 		}
-		return response;
+		int pageSize = Utils.getPageSize() ; 
+		List<HireModel> paged = new ArrayList<HireModel>();
+		int currentIndex = pageNumber * pageSize; 
+		double maxPageSize = Math.ceil(response.size()/Utils.getPageSize()) ; 
+		for(int i = currentIndex ; i < currentIndex + pageSize ; i ++ ) {
+			if(i >= response.size()) {
+				break ; 
+			}else {
+				paged.add(response.get(i));
+			}
+		}
+		Response res = new Response();
+		res.setList(paged);
+		res.setMaxPageSize(maxPageSize);
+		return res;
 	}
 		
 	

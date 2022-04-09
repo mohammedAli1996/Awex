@@ -1,7 +1,5 @@
 package com.awex.awex.management.reports;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,9 +19,10 @@ public class ReportsController {
 	@Autowired
 	private ReportsService reportsService ;
 	
-	
+	 
 	@GetMapping("/uploadReport")                    
 	public ModelAndView uploadReport() {
+		reportsService.test();  
 		ModelAndView mav = new ModelAndView("reports/uploadReport");
 		return mav ;   
 	} 
@@ -58,16 +57,22 @@ public class ReportsController {
 	
 	
 	
-	@PostMapping("/filterAllReports")
-	public List<Report> filterReports(@RequestBody Filter filter) {
-		return reportsService.filterReports(filter, false);
+	@PostMapping("/filterAllReports/{pageNumber}")
+	public Response filterReports(@RequestBody Filter filter , @PathVariable int pageNumber) {
+		return reportsService.filterReports(filter, false , pageNumber);
 	}
 	    
-	@PostMapping("/filterMyReports")
-	public List<Report> filterMyReports(@RequestBody Filter filter) {
-		return reportsService.filterReports(filter, true);
+	@PostMapping("/filterMyReports/{pageNumber}")
+	public Response filterMyReports(@RequestBody Filter filter , @PathVariable int pageNumber) {
+		return reportsService.filterReports(filter, true , pageNumber);
 	}
-	    
+	
+	
+	@PostMapping("/myReports/{pageNumber}")
+	public Response getMyReports(@RequestBody Filter filter , @PathVariable int pageNumber) {
+		return reportsService.getMyReports(filter , pageNumber);
+	}
+	
 	
 	@GetMapping("/myReports")                    
 	public ModelAndView getMyReports() {  
@@ -75,10 +80,6 @@ public class ReportsController {
 		return mav ;    
 	}
 	
-	@PostMapping("/myReports")
-	public List<Report> getMyReports(@RequestBody Filter filter) {
-		return reportsService.getMyReports(filter);
-	}
 	
 	@GetMapping("/getReport/{reportId}")                    
 	public ModelAndView getReport(@PathVariable int reportId) {  

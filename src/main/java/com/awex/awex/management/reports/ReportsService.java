@@ -9,6 +9,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.awex.awex.management.Utils;
 import com.awex.awex.management.Security.MasterService;
 import com.awex.awex.management.Security.UserRepository;
 import com.awex.awex.management.Security.Usersys;
@@ -23,6 +24,10 @@ public class ReportsService {
 	@Autowired
 	private MasterService masterService ; 
 	
+	public void test() {
+		System.out.println("username "+ masterService.get_current_User().getUsername() + " , roles :"+masterService.get_current_User().getUserRoles()+"-");
+	}
+	
 	public Report addReport(Report request ) {
 		Usersys user = masterService.get_current_User();
 		request.setEmpName(user.getEmployeeName());
@@ -31,12 +36,12 @@ public class ReportsService {
 		request.setDate(new Date());
 		return reportRepository.save(request);
 	}
-	
 	 
+	  
 	@Autowired
 	private UserRepository userRepository ;
 	
-	public List<Report> filterReports(Filter filter , boolean myEmployees){
+	public Response filterReports(Filter filter , boolean myEmployees, int pageNumber){
 		List<Integer> myEmployeesIds = new ArrayList<Integer>();
 		if(myEmployees) {
 			List<Usersys> allUsers = userRepository.findAll() ;
@@ -46,7 +51,7 @@ public class ReportsService {
 					myEmployeesIds.add(user.getRepoId());
 				}   
 			}
-		}
+		}  
 		List<Report> all = reportRepository.findAll();   
 		 
 		List<Report> response = new ArrayList<Report>();
@@ -73,7 +78,24 @@ public class ReportsService {
 			}
 			response.add(report);
 		}
-		return response ; 
+		
+		
+		int pageSize = Utils.getPageSize() ; 
+		List<Report> paged = new ArrayList<Report>();
+		int currentIndex = pageNumber * pageSize; 
+		double maxPageSize = Math.ceil(response.size()/Utils.getPageSize()) ; 
+		for(int i = currentIndex ; i < currentIndex + pageSize ; i ++ ) {
+			if(i >= response.size()) {
+				break ; 
+			}else {
+				paged.add(response.get(i));
+			}
+		}
+		
+		Response res = new Response();
+		res.setList(paged);
+		res.setMaxPageSize(maxPageSize);
+		return res;
 	}
 	
 	
@@ -88,7 +110,7 @@ public class ReportsService {
     }
 
 
-	public List<Report> getMyReports(Filter filter) {
+	public Response getMyReports(Filter filter, int pageNumber) {
 		List<Report> all = reportRepository.findByEmpId(masterService.get_current_User().getRepoId());   
 		List<Report> response = new ArrayList<Report>();
 		for(Report report : all ) {
@@ -99,7 +121,21 @@ public class ReportsService {
 			}
 			response.add(report);
 		}
-		return response ; 
+		int pageSize = Utils.getPageSize() ; 
+		List<Report> paged = new ArrayList<Report>();
+		int currentIndex = pageNumber * pageSize; 
+		double maxPageSize = Math.ceil(response.size()/Utils.getPageSize()) ; 
+		for(int i = currentIndex ; i < currentIndex + pageSize ; i ++ ) {
+			if(i >= response.size()) {
+				break ; 
+			}else {
+				paged.add(response.get(i));
+			}
+		}
+		Response res = new Response();
+		res.setList(paged);
+		res.setMaxPageSize(maxPageSize);
+		return res; 
 	}
 
 	

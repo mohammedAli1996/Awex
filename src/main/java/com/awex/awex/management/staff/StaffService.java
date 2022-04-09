@@ -7,6 +7,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.awex.awex.management.Utils;
 import com.awex.awex.management.utils.ServiceException;
 
 @Service
@@ -40,12 +41,26 @@ public class StaffService {
 	}
 	
 	
-	public List<Staff> getAllStaff(){
+	public Response getAllStaff(int pageNumber){
 		List<Staff> response = new ArrayList<Staff>();
 		for(Staff model :staffRepo.findAll()) {
-			response.add(model);
+			response.add(model);  
 		}
-		return response;
+		int pageSize = Utils.getPageSize() ; 
+		List<Staff> paged = new ArrayList<Staff>();
+		int currentIndex = pageNumber * pageSize; 
+		double maxPageSize = Math.ceil(response.size()/Utils.getPageSize()) ; 
+		for(int i = currentIndex ; i < currentIndex + pageSize ; i ++ ) {
+			if(i >= response.size()) {
+				break ; 
+			}else {
+				paged.add(response.get(i));
+			}
+		}
+		Response res = new Response();
+		res.setList(paged);
+		res.setMaxPageSize(maxPageSize);
+		return res; 
 	}
 	
 	

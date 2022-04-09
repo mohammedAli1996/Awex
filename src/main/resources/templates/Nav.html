@@ -55,7 +55,7 @@
         </div>
       </li>
       
-      <li class="nav-item">
+      <li sec:authorize="hasAuthority('Admin')" class="nav-item">
         <a class="nav-link" data-toggle="collapse" href="#users" aria-expanded="false" aria-controls="form-elements">
           <i class="mdi mdi-account-multiple-outline menu-icon"></i>
           <span class="menu-title">Users</span>
@@ -78,14 +78,14 @@
         <div class="collapse" id="report">
           <ul class="nav flex-column sub-menu">
             <li class="nav-item"><a class="nav-link" href="/uploadReport">Upload Report</a></li>
-            <li class="nav-item"><a class="nav-link" href="/myEmployees">My Employees <br> Reports</a></li>
-            <li class="nav-item"><a class="nav-link" href="/reviewReports">Reports Review</a></li>
+            <li  sec:authorize="hasAuthority('Manager')" class="nav-item"><a class="nav-link" href="/myEmployees">My Employees <br> Reports</a></li>
+            <li sec:authorize="hasAnyAuthority('Admin','HR Manager')" class="nav-item"><a class="nav-link" href="/reviewReports">Reports Review</a></li>
             <li class="nav-item"><a class="nav-link" href="/myReports">My Reports</a></li>
           </ul>
         </div>
        
       </li>
-      <li class="nav-item">
+      <li sec:authorize="hasAnyAuthority('Admin','HR Manager')" class="nav-item">
         <a class="nav-link" data-toggle="collapse" href="#hiring" aria-expanded="false" aria-controls="form-elements">
           <i class="mdi mdi-cards-outline menu-icon"></i>
           <span class="menu-title">Hiring</span>
@@ -100,7 +100,7 @@
        
       </li>
 
-      <li class="nav-item">
+      <li sec:authorize="hasAnyAuthority('Admin','HR Manager')" class="nav-item">
         <a class="nav-link" data-toggle="collapse" href="#staff" aria-expanded="false" aria-controls="form-elements">
           <i class="mdi mdi-face menu-icon"></i>
           <span class="menu-title">Our Staff</span>

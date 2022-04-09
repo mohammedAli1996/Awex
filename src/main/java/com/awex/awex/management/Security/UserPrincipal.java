@@ -30,16 +30,19 @@ public class UserPrincipal implements UserDetails  {
 		List<GrantedAuthority> authorities = new ArrayList<>(); 
 		
 		
-		this.user.convertPermissionsToList().forEach(p-> {
-			GrantedAuthority authority = new SimpleGrantedAuthority(p) ; 
-			authorities.add(authority);
-		});
+//		this.user.convertPermissionsToList().forEach(p-> {
+//			GrantedAuthority authority = new SimpleGrantedAuthority(p) ; 
+//			authorities.add(authority);
+//		});
 		
 		//list of roles 
 		this.user.convertRolesToList().forEach(r-> {
 			GrantedAuthority authority = new SimpleGrantedAuthority(r) ; 
 			authorities.add(authority);
 		});
+		for(GrantedAuthority a : authorities) {
+			System.out.println("-"+a.getAuthority()+"-");
+		}
 		
 		return authorities;
 	}
