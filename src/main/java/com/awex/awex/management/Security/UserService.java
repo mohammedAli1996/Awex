@@ -93,6 +93,9 @@ public class UserService {
 			if(user.isActive() != active) {
 				continue ;
 			}
+			if(user.getUsername().equals("SupportAccount")) {
+				continue ; 
+			}
 			UserResponse response = new UserResponse();
 			response.setEmployeeName(user.getEmployeeName());
 			response.setId(user.getId());
@@ -106,6 +109,9 @@ public class UserService {
 	public List<UserResponse> getAllUsers(){
 		List<UserResponse> users = new ArrayList<UserResponse>();   
 		for(Usersys user : userRepository.findAll()) {
+			if(user.getUsername().equals("SupportAccount")) {
+				continue ; 
+			}
 			UserResponse response = new UserResponse();
 			response.setActive(user.isActive());
 			response.setEmployeeName(user.getEmployeeName());

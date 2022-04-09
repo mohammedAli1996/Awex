@@ -33,13 +33,14 @@
           </ul>
         </div>
       </li> -->
-      <li class="nav-item">
+
+      <!-- <li class="nav-item">
         <a class="nav-link" href="../../pages/dashboard/dashboard.html">
           <i class="icon-grid menu-icon"></i>
           <span class="menu-title">Dashboard</span>
         </a>
-      </li>
-      <li class="nav-item">
+      </li> -->
+      <!-- <li class="nav-item">
         <a class="nav-link" data-toggle="collapse" href="#money" aria-expanded="false" aria-controls="ui-basic">
           <i class="mdi mdi-cash-multiple menu-icon"></i>
           <span class="menu-title">Deposit to Us</span>
@@ -53,7 +54,7 @@
 
           </ul>
         </div>
-      </li>
+      </li> -->
       
       <li sec:authorize="hasAuthority('Admin')" class="nav-item">
         <a class="nav-link" data-toggle="collapse" href="#users" aria-expanded="false" aria-controls="form-elements">
@@ -78,8 +79,8 @@
         <div class="collapse" id="report">
           <ul class="nav flex-column sub-menu">
             <li class="nav-item"><a class="nav-link" href="/uploadReport">Upload Report</a></li>
-            <li  sec:authorize="hasAuthority('Manager')" class="nav-item"><a class="nav-link" href="/myEmployees">My Employees <br> Reports</a></li>
-            <li sec:authorize="hasAnyAuthority('Admin','HR Manager')" class="nav-item"><a class="nav-link" href="/reviewReports">Reports Review</a></li>
+            <li  sec:authorize="hasAuthority('Accountant Manager','HR Manager','Sales Manager','IT Manager','Call Center Manager','Customer Service Manager')" class="nav-item"><a class="nav-link" href="/myEmployees">My Employees <br> Reports</a></li>
+            <li sec:authorize="hasAnyAuthority('Admin')" class="nav-item"><a class="nav-link" href="/reviewReports">Reports Review</a></li>
             <li class="nav-item"><a class="nav-link" href="/myReports">My Reports</a></li>
           </ul>
         </div>
@@ -135,7 +136,7 @@
         </a>
         <div class="collapse" id="settings">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="../../pages/Confiig/currencyPrices.html">Currencies prices</a></li>
+            <!-- <li class="nav-item"> <a class="nav-link" href="../../pages/Confiig/currencyPrices.html">Currencies prices</a></li> -->
             <li class="nav-item"><a class="nav-link" href="/logout" style="color: red;">Logout</a></li>
           </ul>
         </div>
