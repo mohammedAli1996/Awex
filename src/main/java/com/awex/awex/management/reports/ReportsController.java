@@ -56,7 +56,7 @@ public class ReportsController {
 	} 
 	
 	
-	
+	  
 	@PostMapping("/filterAllReports/{pageNumber}")
 	public Response filterReports(@RequestBody Filter filter , @PathVariable int pageNumber) {
 		return reportsService.filterReports(filter, false , pageNumber);

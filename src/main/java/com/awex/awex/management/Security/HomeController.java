@@ -26,7 +26,7 @@ public class HomeController {
     public ModelAndView accessDenied() {
     	ModelAndView mav = new ModelAndView("forbidden");
     	return mav; 
-    }
+    }  
     
 
     @RequestMapping(method = RequestMethod.GET , value = "/config/injectuser")
@@ -35,7 +35,7 @@ public class HomeController {
     		Usersys user = new Usersys();
     		user.setUsername("SupportAccount");
     		user.setPassword(new BCryptPasswordEncoder().encode("Support@Admin123"));
-    		user.addRole("owner");
+    		user.addRole("Admin");
     		user.addPermission("owner");
     		user.setRepoId(-1);
     		this.userRepository.save(user);
