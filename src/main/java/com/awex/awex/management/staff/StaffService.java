@@ -76,5 +76,10 @@ public class StaffService {
 		}
 		return staffRepo.save(db);
 	}
+
+
+	public List<Staff> getAllStaffNoPage() {
+		return staffRepo.findAll();
+	}
 	
 }

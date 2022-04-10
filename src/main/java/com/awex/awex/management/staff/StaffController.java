@@ -1,5 +1,7 @@
 package com.awex.awex.management.staff;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -62,6 +64,14 @@ public class StaffController {
     public Response allStaff(@PathVariable int pageNumber) {
     	return staffService.getAllStaff(pageNumber);
     }  
+	
+	
+	@GetMapping("/allStaff")
+    public List<Staff> allStaffNoPage() {
+    	return staffService.getAllStaffNoPage();
+    }
+	
+	
 	
 	  
 	@GetMapping("/edtStaff/{id}")

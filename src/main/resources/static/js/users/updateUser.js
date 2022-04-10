@@ -13,12 +13,32 @@ $(document).ready(function () {
         success: function (data) {
             for (var i = 0, len = data.length; i < len; i++) {
                 document.getElementById("repoId").innerHTML+= "<option value="+data[i].id+">"+data[i].name+"</option>";
-                document.getElementById("reportTo").innerHTML+= "<option value="+data[i].id+">"+data[i].name+"</option>";
             }
         },
         error: function (e) {
         }
     });
+
+
+
+    $.ajax({
+        type: "GET",
+        contentType: "application/json",
+        url: "/allReportTo",
+        dataType: 'json',
+        cache: false,
+        timeout: 600000,
+        success: function (data) {
+            for (var i = 0, len = data.length; i < len; i++) {
+                document.getElementById("reportTo").innerHTML+= "<option value="+data[i].id+">"+data[i].userName+"</option>";
+            }
+        },
+        error: function (e) {
+        }
+    });
+
+
+
 
 
     $.ajax({

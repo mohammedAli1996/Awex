@@ -124,4 +124,12 @@ public class UserController {
 		return mav;
 	}
 	
+	
+	
+	@GetMapping("/allReportTo")
+	public List<UserResponse> getAllUsersReportTo(){
+		return userService.getAllUsersReportTo() ;
+	}  
+	
+	
 }

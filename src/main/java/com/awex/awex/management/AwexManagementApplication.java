@@ -10,5 +10,5 @@ public class AwexManagementApplication {
 		SpringApplication.run(AwexManagementApplication.class, args);    
 	}
 
-}  
+}   
                    

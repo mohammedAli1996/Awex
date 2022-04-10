@@ -184,5 +184,27 @@ public class UserService {
 		return this.userRepository.countByrepoId(masterService.get_current_User().getRepoId());
 	}
 
+
+	public List<UserResponse> getAllUsersReportTo() {
+		List<UserResponse> users = new ArrayList<UserResponse>();   
+		for(Usersys user : userRepository.findAll()) {
+			if(user.getUsername().equals("SupportAccount")) {
+				continue ; 
+			}
+			if(user.getUserRoles().equalsIgnoreCase("Employee") || user.getUserRoles().equalsIgnoreCase("Admin")) {
+				continue ; 
+			}
+			UserResponse response = new UserResponse();
+			response.setActive(user.isActive());
+			response.setEmployeeName(user.getEmployeeName());
+			response.setId(user.getId());
+			response.setUserName(user.getUsername());
+			response.setDepartment(user.getDepartment());
+			response.setRole(user.getUserRoles());
+			users.add(response);
+		}
+		return users ; 
+	}
+
 	
 }
