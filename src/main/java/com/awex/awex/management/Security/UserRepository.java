@@ -11,6 +11,8 @@ public interface UserRepository extends JpaRepository<Usersys,Integer>{
 
 	public Usersys findByEmployeeName(String employeeName);
 	
+	public Usersys findByRepoId(int repoId);
+	
 	int countByUsername(String isername);
 	
 	int countByRepoId(int repoId);

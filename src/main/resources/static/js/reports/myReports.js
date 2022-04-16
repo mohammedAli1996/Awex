@@ -22,6 +22,9 @@ function prv(){
 
 
 function filterReports(crPage) {
+    if(crPage == null ){
+        crPage = 0 ; 
+    }
     var request = {};
     request["staffId"] = -1;
     request["department"] = "";
@@ -40,7 +43,11 @@ function filterReports(crPage) {
         success: function (result) {
             var data = result.list ; 
             for (var i = 0; i < data.length; i++) {
-                document.getElementById("resBody").innerHTML += "<tr><td>"+data[i].empId+"</td><td>" + data[i].empName + "</td><td>" + data[i].department + "</td><td><button type='button' class='btn btn-inverse-warning btn-icon' onclick='download("+data[i].id+")'><i class='ti-download'></i></button></td><td><button type='button' class='btn btn-inverse-danger btn-icon' onclick='getReport("+data[i].id+")'><i class='ti-eye'></i></button></td></tr>"
+                if(data[i].type == "Data"){
+                    document.getElementById("resBody").innerHTML += "<tr><td>"+data[i].empId+"</td><td>" + data[i].empName + "</td><td>" + data[i].department + "</td><td><button type='button' class='btn btn-inverse-warning btn-icon' onclick='download("+data[i].id+")'><i class='ti-download'></i></button></td><td><button type='button' class='btn btn-inverse-danger btn-icon' onclick='getReport("+data[i].id+")'><i class='ti-eye'></i></button></td></tr>"
+                }else{
+                    document.getElementById("resBody").innerHTML += "<tr><td>"+data[i].empId+"</td><td>" + data[i].empName + "</td><td>" + data[i].department + "</td><td><button type='button' class='btn btn-inverse-warning btn-icon' onclick='downloadFile(\""+data[i].filePath+"\")'><i class='ti-download'></i></button></td></tr>"
+                }
             }
             var maxPage = result.maxPageSize ; 
             if(maxPage == 0 || maxPage == currentPage){
@@ -67,7 +74,10 @@ function getReport(reportId){
 }
 
 
-
+function downloadFile(URL){
+    URL = "/files/"+URL ; 
+    window.open(URL, '_blank');
+}
 
 function download(reportId) {
     $.ajax({

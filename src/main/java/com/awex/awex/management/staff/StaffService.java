@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.awex.awex.management.Utils;
+import com.awex.awex.management.Security.UserRepository;
+import com.awex.awex.management.Security.Usersys;
 import com.awex.awex.management.utils.ServiceException;
 
 @Service
@@ -17,6 +19,8 @@ public class StaffService {
 	@Autowired
 	private StaffRepository staffRepo  ;
 
+	@Autowired
+	private UserRepository userRepository ; 
 	
 	public Staff findById(int id ) {
 		Optional<Staff> optional = staffRepo.findById(id);
@@ -36,7 +40,14 @@ public class StaffService {
 	public int updateStaff(int id , Staff request ) {
 		Staff db = findById(id);
 		request.setId(db.getId());
-		request.setStatus(db.getStatus());
+		request.setStatus(db.getStatus());  
+		try {
+			Usersys user =  userRepository.findByRepoId(id);
+			user.setDepartment(request.getDepartment());
+			userRepository.save(user);
+		}catch(Exception ex) {
+			
+		}
 		return staffRepo.save(request).getId();
 	}
 	

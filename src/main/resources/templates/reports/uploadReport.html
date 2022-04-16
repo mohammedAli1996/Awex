@@ -28,6 +28,7 @@
 </head>
 
 <body>
+  <input id="department"  th:value="${department}" hidden>
     <script>
         $(document).on('change', '.file-input', function() {
 
@@ -381,7 +382,7 @@ textbox.text(filesCount + ' files selected');
                 <div class="card-body">
                   <h4 class="card-title">Add Report</h4>
                   <form class="form-sample">
-                   
+                   <div id="salesForm" style="display: none;">
                     <div class="row">
                       <div class="col-md-6">
                         <div class="form-group row">
@@ -791,12 +792,24 @@ textbox.text(filesCount + ' files selected');
                           </div>
                         </div>
                       </div>
-                     
+                    </div>
+                  </div>
+                    <div class="row" id="generalForm" style="display: none;">
+                      <div class="col-md-12">
+                        <div class="container d-flex justify-content-center mt-100">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="file-drop-area" style="height: 100%"> <span class="btn btn-outline-danger btn-icon-text">   <i class="ti-upload btn-icon-prepend"></i>   Choose files </span> <span style="padding-left: 10px;"> or drag and drop files here</span> <input class="file-input" id="filePath" type="file" onchange="uploadFile()" multiple>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
                     </div>
                     <label style="color: red;" id="msgholder"></label>
                     <div style="text-align: right;">
                    
-                      <button type="button" class="add btn btn-primary todo-list-add-btn" id="add-task" onclick="addReport()">Save</button>
+                      <button type="button" class="add btn btn-primary todo-list-add-btn" id="submitBtn" onclick="addReport()">Save</button>
                     </div>
                   </form>
                 </div>

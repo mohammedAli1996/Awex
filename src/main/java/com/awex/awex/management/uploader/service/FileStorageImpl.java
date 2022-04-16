@@ -32,11 +32,11 @@ public class FileStorageImpl implements FileStorage {
     private final Path rootLocation = Paths.get("filestorage");
     Logger log = LoggerFactory.getLogger(this.getClass().getName());
 
-    
+        
     
     @Override
     public String store(MultipartFile file) throws IOException {
-    	int id = getSequence();
+    	int id = getSequence();  
         try {
             Files.copy(file.getInputStream(), this.rootLocation.resolve(id+"_"+file.getOriginalFilename()), StandardCopyOption.REPLACE_EXISTING);
         } catch (Exception e) {

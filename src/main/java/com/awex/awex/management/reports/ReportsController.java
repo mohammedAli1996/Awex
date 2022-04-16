@@ -21,9 +21,9 @@ public class ReportsController {
 	
 	 
 	@GetMapping("/uploadReport")                    
-	public ModelAndView uploadReport() {
-		reportsService.test();  
+	public ModelAndView uploadReport() {  
 		ModelAndView mav = new ModelAndView("reports/uploadReport");
+		mav.addObject("department", reportsService.getDepartment());
 		return mav ;   
 	} 
 	

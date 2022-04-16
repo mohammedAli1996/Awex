@@ -46,14 +46,22 @@ public class Report {
 	    
 	private String depositeAmount ;   
 	
-	private int empId ; 
-	    
-	private String empName ; 
-	
-	private String department ;   
-	
-	private Date date ; 
-	
 	private String moreDetails ; 
 	
-}
+	private String filePath ;   
+	
+	
+	//Required From BE 
+	private int empId ; 
+	        
+	private String empName ;         
+	 
+	private String department ;     
+	  
+	private Date date ;     
+	    
+    
+	private String type  ; // base on department   
+	    
+	
+}  

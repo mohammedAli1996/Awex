@@ -20,16 +20,21 @@ public class ReportsService {
 	@Autowired
 	private ReportRepository reportRepository ; 
 	
-	
+	  
 	@Autowired
 	private MasterService masterService ; 
 	
-	public void test() {
-		System.out.println("username "+ masterService.get_current_User().getUsername() + " , roles :"+masterService.get_current_User().getUserRoles()+"-");
+	public String getDepartment() {
+		return masterService.get_current_User().getDepartment();
 	}
 	
-	public Report addReport(Report request ) {
-		Usersys user = masterService.get_current_User();
+	public Report addReport(Report request ) {  
+		if(request.getFilePath() != null && request.getFilePath() != "") {
+			request.setType("File");
+		}else {  
+			request.setType("Data");  
+		}
+		Usersys user = masterService.get_current_User(); 
 		request.setEmpName(user.getEmployeeName());
 		request.setEmpId(user.getRepoId());
 		request.setDepartment(user.getDepartment());

@@ -68,7 +68,7 @@ public class Staff {
 	private String status ; 
 	
 	private String passportPhoto ; 
-	
+	  
 	private String passportId ; 
 	
 	private String degree ; 
