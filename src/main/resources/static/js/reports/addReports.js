@@ -29,7 +29,7 @@ function addReport(){
         cache: false,
         timeout: 600000,
         success: function (data) {
-            window.location = "/reviewReports";
+            window.location = "/myReports";
         },
         error: function (e) {
             document.getElementById("msgholder").innerHTML = "Error : Please try again "; 
