@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import com.awex.awex.management.Utils;
 import com.awex.awex.management.Security.MasterService;
 import com.awex.awex.management.Security.UserRepository;
+import com.awex.awex.management.Security.UserService;
 import com.awex.awex.management.Security.Usersys;
 
 @Service
@@ -20,7 +21,9 @@ public class ReportsService {
 	@Autowired
 	private ReportRepository reportRepository ; 
 	
-	  
+	@Autowired  
+	private UserService userService ; 
+	
 	@Autowired
 	private MasterService masterService ; 
 	
@@ -93,6 +96,7 @@ public class ReportsService {
 			if(i >= response.size()) {
 				break ; 
 			}else {
+				response.get(i).setEmpName(userService.getUser(response.get(i).getEmpId()).getEmployeeName());
 				paged.add(response.get(i));
 			}
 		}

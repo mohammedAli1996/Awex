@@ -68,16 +68,17 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 		.antMatchers("/updateStaff/**").hasAnyAuthority("Admin","HR Manager")
 		.antMatchers("/edtStaff/**").hasAnyAuthority("Admin","HR Manager")
 		.antMatchers("/getStaff/**").hasAnyAuthority("Admin","HR Manager")
-		.antMatchers("/terminateStaff/**").hasAnyAuthority("Admin","HR Manager")
+		.antMatchers("/terminateStaff/**").hasAnyAuthority("Admin","HR Manager")  
 				
+		.antMatchers("/addHire").hasAnyAuthority("Admin","HR Manager")
 		.antMatchers("/allHires").hasAnyAuthority("Admin","HR Manager")
 		.antMatchers("/updateHire/**").hasAnyAuthority("Admin","HR Manager")
 		.antMatchers("/allHires").hasAnyAuthority("Admin","HR Manager")
 		.antMatchers("/filterHiresList").hasAnyAuthority("Admin","HR Manager")
 		.antMatchers("/getHireView").hasAnyAuthority("Admin","HR Manager")
 		.antMatchers("/getHire/**").hasAnyAuthority("Admin","HR Manager")
-
-		.and()
+            
+		.and()  
 		.authorizeRequests().anyRequest().authenticated()
 		.and()
 		.exceptionHandling().accessDeniedPage("/forbidden")  

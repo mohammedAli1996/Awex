@@ -23,7 +23,10 @@ $(document).ready(function () {
             document.getElementById("na").value = data.na ; 
             document.getElementById("email").value = data.email ; 
             document.getElementById("healthStatus").value = data.healthStatus ; 
+            
             document.getElementById("nationality").value = data.nationality; 
+            document.getElementById("select2-nationality-container").innerHTML = data.nationality
+            
             document.getElementById("workEx1Name").value = data.workEx1Name ; 
             document.getElementById("workEx1Department").value = data.workEx1Department ; 
             document.getElementById("workEx1Position").value = data.workEx1Position; 
