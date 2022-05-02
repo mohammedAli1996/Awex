@@ -83,7 +83,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 		.and()
 		.exceptionHandling().accessDeniedPage("/forbidden")  
 		.and()
-		.formLogin().defaultSuccessUrl("/uploadReport")
+		.formLogin().defaultSuccessUrl("/myReports")
 		.loginPage("/login").permitAll()
 		.and()
 		.logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/login").deleteCookies("JSESSIONID");

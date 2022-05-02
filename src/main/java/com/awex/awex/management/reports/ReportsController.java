@@ -19,6 +19,8 @@ public class ReportsController {
 	@Autowired
 	private ReportsService reportsService ;
 	
+	
+	
 	 
 	@GetMapping("/uploadReport")                    
 	public ModelAndView uploadReport() {  
@@ -76,6 +78,12 @@ public class ReportsController {
 	
 	@GetMapping("/myReports")                    
 	public ModelAndView getMyReports() {  
+		ModelAndView mav = new ModelAndView("reports/myReports");
+		return mav ;    
+	}
+	
+	@GetMapping("/")                    
+	public ModelAndView index() {  
 		ModelAndView mav = new ModelAndView("reports/myReports");
 		return mav ;    
 	}
