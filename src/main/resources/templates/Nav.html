@@ -56,7 +56,7 @@
         </div>
       </li> -->
       
-      <li sec:authorize="hasAuthority('Admin')" class="nav-item">
+      <li sec:authorize="hasAnyAuthority('Admin','HR Manager')" class="nav-item">
         <a class="nav-link" data-toggle="collapse" href="#users" aria-expanded="false" aria-controls="form-elements">
           <i class="mdi mdi-account-multiple-outline menu-icon"></i>
           <span class="menu-title">Users</span>

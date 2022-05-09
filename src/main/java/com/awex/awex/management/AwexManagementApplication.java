@@ -9,6 +9,6 @@ public class AwexManagementApplication {
 	public static void main(String[] args) {  
 		SpringApplication.run(AwexManagementApplication.class, args);    
 	}
-  
+    
 }       
-                         
+                              
