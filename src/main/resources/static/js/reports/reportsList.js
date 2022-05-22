@@ -5,10 +5,10 @@ var langIndex = 0 ;
 
 langMap.set("Reports Review", ["Reports Review", "عرض التقارير", "報告審查"]);
 
-langMap.set("Employee", ["Employee", "", ""]);
-langMap.set("DepartmentTra", ["Department", "", ""]);
-langMap.set("DateTra", ["Date", "", ""]);
-langMap.set("Search", ["Search", "", ""]);
+langMap.set("Employee", ["Employee", "الموظف", "員工"]);
+langMap.set("DepartmentTra", ["Department", "القسم", "部門"]);
+langMap.set("DateTra", ["Date", "التاريخ", "日期"]);
+langMap.set("Search", ["Search", "بحث", "搜索"]);
 langMap.set("ID", ["ID", "المعرف", "標識符"]);
 langMap.set("Name", ["Name", "الاسم", "姓名"]);
 langMap.set("Department", ["Department", "القسم", "部門"]);
