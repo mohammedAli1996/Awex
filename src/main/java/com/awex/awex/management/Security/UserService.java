@@ -37,7 +37,20 @@ public class UserService {
 	}
 	
 	
-	
+	public void setUserLang(String lang) {
+		Usersys current = masterService.get_current_User(); 
+		current.setLanguage(lang);
+		userRepository.save(current);
+	}
+	 
+	 
+	public String getUserLanguage() {
+		Usersys current = masterService.get_current_User(); 
+		if(current == null ) {
+			return "En";
+		}
+		return current.getLanguage() ;
+	}
 	 
 	/*Getters*/
 	

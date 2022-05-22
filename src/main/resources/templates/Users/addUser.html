@@ -314,7 +314,7 @@
             <div class="col-12 grid-margin">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Add New User</h4>
+                  <h4 class="card-title translatable" id="add New User"></h4>
                   <form class="form-sample">
                     <p class="card-description">
                   
@@ -328,7 +328,7 @@
                     <div class="row">
                       <div class="col-md-6">
                         <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Employee</label>
+                          <label class="col-sm-3 col-form-label translatable" id="Employee"></label>
                           <div class="col-sm-9">
                             <select class="form-control collectable" id="repoId">
                              
@@ -338,7 +338,7 @@
                       </div>
                         <div class="col-md-6">
                             <div class="form-group row">
-                              <label class="col-sm-3 col-form-label">Email Address</label>
+                              <label class="col-sm-3 col-form-label translatable" id="Email Address"></label>
                               <div class="col-sm-9">
                                 <input type="email" class="form-control collectable" id="username" />
                               </div>
@@ -355,26 +355,26 @@
                     <div class="row">
                       <div class="col-md-6">
                         <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Password</label>
+                          <label class="col-sm-3 col-form-label translatable" id="Password"></label>
                           <div class="col-sm-9">
                             <input id="password" type="password" class="form-control collectable" />
-                            <input class="hand_crusor" type="checkbox" onclick="myFunction()"> <small>Show Password</small> 
+                            <input class="hand_crusor" type="checkbox" onclick="myFunction()"> <small class="translatable" id="Show Password"></small> 
                           </div>
                         </div>
                       </div>
                         <div class="col-md-6">
                             <div class="form-group row">
-                              <label class="col-sm-3 col-form-label">Role</label>
+                              <label class="col-sm-3 col-form-label translatable" id="Role"></label>
                               <div class="col-sm-9">
                                 <select id="userRoles" class="form-control collectable" onchange="checkReportTo(this.value)">
-                                  <option value="Admin">Admin</option>
-                                  <option value="Employee">Employee </option>
-                                  <option value="HR Manager">HR Manager</option>
-                                  <option value="Accountant Manager">Accountant Manager</option>
-                                  <option value="Sales Manager">Sales Manager</option>
-                                  <option value="IT Manager">IT Manager</option>
-                                  <option value="Call Center Manager">Call Center Manager</option>
-                                  <option value="Customer Service Manager">Customer Service Manager</option>
+                                  <option class="translatable" id="Admin" value="Admin"></option>
+                                  <option class="translatable" id="Employeee" value="Employee"></option>
+                                  <option class="translatable" id="HR Manager" value="HR Manager"></option>
+                                  <option class="translatable" id="Accountant Manager" value="Accountant Manager"></option>
+                                  <option class="translatable" id="Sales Manager" value="Sales Manager"></option>
+                                  <option class="translatable" id="IT Manager" value="IT Manager"></option>
+                                  <option class="translatable" id="Call Center Manager" value="Call Center Manager"></option>
+                                  <option class="translatable" id="Customer Service Manager" value="Customer Service Manager"></option>
                                 </select>
                               </div>
                             </div>
@@ -389,7 +389,7 @@
                     <div class="row" id="reportToField" hidden>
                       <div class="col-md-6">
                         <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Report To</label>
+                          <label class="col-sm-3 col-form-label translatable" id="Report To"></label>
                           <div class="col-sm-9">
                             <select class="form-control collectable" id="reportTo">             
                             </select>
@@ -400,8 +400,8 @@
                     <label style="color: red;" id="msgholder"></label>
                     <div class="template-demo" style="float: right;">
                      
-                        <button type="button" class="btn btn-outline-info btn-icon-text" onclick="addUser()">
-                          Submit
+                        <button type="button" class="btn btn-outline-info btn-icon-text translatable" id="Submit" onclick="addUser()">
+                          
                                                                                                     
                         </button>
                      

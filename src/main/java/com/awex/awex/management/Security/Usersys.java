@@ -27,6 +27,8 @@ public class Usersys {
 	private String department ; 
 	
 	
+	private String language = "En" ; 
+	
 	public Usersys() {
 		this.createdAt = new Date();
 		UserPermissions = " ";
@@ -49,6 +51,13 @@ public class Usersys {
 	}
 
 
+	public String getLanguage() {
+		return language;
+	}
+
+	public void setLanguage(String language) {
+		this.language = language;
+	}
 
 	public String getDepartment() {
 		return department;

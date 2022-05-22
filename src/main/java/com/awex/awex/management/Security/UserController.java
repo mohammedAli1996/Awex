@@ -23,6 +23,22 @@ public class UserController {
 	private UserService userService ; 
 	  
 	
+	@GetMapping("/userLang/{lang}")
+	public ModelAndView setUserLang(@PathVariable String lang) {  
+		userService.setUserLang(lang);
+		ModelAndView mav = new ModelAndView("reports/myReports");
+		return mav ; 
+	}
+	
+	
+	
+	@GetMapping("/userLang") 
+	public UserLanguage getUserLang() {  
+		UserLanguage response = new UserLanguage() ; 
+		response.setLanguage(userService.getUserLanguage());
+		return response;
+	}
+	
 	@GetMapping("/addUser")
 	public ModelAndView getAddUser() {
 		ModelAndView mav = new ModelAndView("Users/addUser");

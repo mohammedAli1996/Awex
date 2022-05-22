@@ -43,8 +43,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 		.antMatchers("/fonts/**").permitAll()
 		.antMatchers("/addHire").permitAll()  
 		.antMatchers("/addHire/**").permitAll()  
-		.antMatchers("/success").permitAll()  
-		.antMatchers("/index").authenticated()  
+		.antMatchers("/success").permitAll()
+		.antMatchers("/userLang").permitAll()
+		 
+		.antMatchers("/index").authenticated()   
 		
 		.antMatchers("/myEmployees").hasAnyAuthority("Accountant Manager","HR Manager","Sales Manager","IT Manager","Call Center Manager","Customer Service Manager")
 		

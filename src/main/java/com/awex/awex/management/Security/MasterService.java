@@ -11,21 +11,24 @@ import org.springframework.stereotype.Service;
 public class MasterService {
 
 	@Autowired
-	protected UserRepository userRepo;
+	protected UserRepository userRepo; 
+	     
 	
-	
-	public Usersys get_current_User() {
+	public Usersys get_current_User() {            
 		String username ; 
     	 Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 	        Object principal =  auth.getPrincipal();
-	        if(principal instanceof UserDetails) {
+	        if(principal instanceof UserDetails) {  
 	        	 username = ((UserDetails) principal).getUsername() ; 
 		         for(Usersys user : this.userRepo.findAll()) {
 		 			if(user.getUsername().equalsIgnoreCase(username)) {
-		 				return user ; 
-		 			}
-		 		}
-	        }
+		 				if(user.getLanguage() == null || user.getLanguage().isBlank()) {
+		 					user.setLanguage("En");
+		 				}
+		 				return user ;    
+		 			}   
+		 		}  
+	        }   
 	         return null  ; 
     }
 	

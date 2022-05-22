@@ -1,3 +1,4 @@
+<script src="../../js/nav/navLang.js"></script>
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
     <ul class="nav">
       <!-- <li class="nav-item">
@@ -59,13 +60,13 @@
       <li sec:authorize="hasAnyAuthority('Admin','HR Manager')" class="nav-item">
         <a class="nav-link" data-toggle="collapse" href="#users" aria-expanded="false" aria-controls="form-elements">
           <i class="mdi mdi-account-multiple-outline menu-icon"></i>
-          <span class="menu-title">Users</span>
-          <i class="menu-arrow"></i>
+          <span class="menu-title navTranslatable" id="Users"></span>
+          <i class="menu-arrow "></i>
         </a>
         <div class="collapse" id="users">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"><a class="nav-link" href="/addUser">Add User</a></li>
-            <li class="nav-item"><a class="nav-link" href="/allUsers">Users List</a></li>
+            <li class="nav-item"><a class="nav-link navTranslatable" href="/addUser" id="Add User"></a></li>
+            <li class="nav-item"><a class="nav-link navTranslatable" href="/allUsers" id="Users List"></a></li>
           </ul>
         </div>
        
@@ -73,15 +74,15 @@
       <li class="nav-item">
         <a class="nav-link" data-toggle="collapse" href="#report" aria-expanded="false" aria-controls="form-elements">
           <i class="icon-paper menu-icon"></i>
-          <span class="menu-title">Reports</span>
+          <span class="menu-title navTranslatable" id="Reports"></span>
           <i class="menu-arrow"></i>
         </a>
         <div class="collapse" id="report">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"><a class="nav-link" href="/uploadReport">Upload Report</a></li>
-            <li  sec:authorize="hasAnyAuthority('Accountant Manager','HR Manager','Sales Manager','IT Manager','Call Center Manager','Customer Service Manager')" class="nav-item"><a class="nav-link" href="/myEmployees">My Employees <br> Reports</a></li>
-            <li sec:authorize="hasAnyAuthority('Admin')" class="nav-item"><a class="nav-link" href="/reviewReports">Reports Review</a></li>
-            <li class="nav-item"><a class="nav-link" href="/myReports">My Reports</a></li>
+            <li class="nav-item"><a class="nav-link navTranslatable" href="/uploadReport" id="Upload Report"></a></li>
+            <li  sec:authorize="hasAnyAuthority('Accountant Manager','HR Manager','Sales Manager','IT Manager','Call Center Manager','Customer Service Manager')" class="nav-item"><a class="nav-link navTranslatable" id="MyEmployeesReports" href="/myEmployees"></a></li>
+            <li sec:authorize="hasAnyAuthority('Admin')" class="nav-item"><a class="nav-link navTranslatable" href="/reviewReports" id="Reports Review"></a></li>
+            <li class="nav-item"><a class="nav-link navTranslatable" href="/myReports" id="My Reports"></a></li>
           </ul>
         </div>
        
@@ -89,13 +90,13 @@
       <li sec:authorize="hasAnyAuthority('Admin','HR Manager')" class="nav-item">
         <a class="nav-link" data-toggle="collapse" href="#hiring" aria-expanded="false" aria-controls="form-elements">
           <i class="mdi mdi-cards-outline menu-icon"></i>
-          <span class="menu-title">Hiring</span>
+          <span class="menu-title navTranslatable" id="Hiring"></span>
           <i class="menu-arrow"></i>
         </a>
         <div class="collapse" id="hiring">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"><a class="nav-link" href="/allHires">Orders List</a></li>
-            <li class="nav-item"><a class="nav-link" href="/addHire">Generate Hiring Link</a></li>
+            <li class="nav-item"><a class="nav-link navTranslatable" href="/allHires" id="Orders List"></a></li>
+            <li class="nav-item"><a class="nav-link navTranslatable" href="/addHire" id="Generate Hiring Link"></a></li>
           </ul>
         </div>
        
@@ -104,13 +105,13 @@
       <li sec:authorize="hasAnyAuthority('Admin','HR Manager')" class="nav-item">
         <a class="nav-link" data-toggle="collapse" href="#staff" aria-expanded="false" aria-controls="form-elements">
           <i class="mdi mdi-face menu-icon"></i>
-          <span class="menu-title">Our Staff</span>
+          <span class="menu-title navTranslatable" id="Our Staff"></span>
           <i class="menu-arrow"></i>
         </a>
         <div class="collapse" id="staff">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"><a class="nav-link" href="/addStaff">New Staff Form</a></li>
-            <li class="nav-item"><a class="nav-link" href="/staffList">Employees List</a></li>
+            <li class="nav-item"><a class="nav-link navTranslatable" href="/addStaff" id="New Staff Form"></a></li>
+            <li class="nav-item"><a class="nav-link navTranslatable" href="/staffList" id="Employees List"></a></li>
           </ul>
         </div>
        
@@ -131,13 +132,18 @@
       <li class="nav-item">
         <a class="nav-link" data-toggle="collapse" href="#settings" aria-expanded="false" aria-controls="tables">
           <i class="mdi mdi-settings menu-icon"></i>
-          <span class="menu-title">Settings</span>
+          <span class="menu-title navTranslatable" id="Settings"></span>
           <i class="menu-arrow"></i>
         </a>
         <div class="collapse" id="settings">
           <ul class="nav flex-column sub-menu">
             <!-- <li class="nav-item"> <a class="nav-link" href="../../pages/Confiig/currencyPrices.html">Currencies prices</a></li> -->
-            <li class="nav-item"><a class="nav-link" href="/logout" style="color: red;">Logout</a></li>
+            <li class="nav-item"><a class="nav-link navTranslatable" href="/logout" style="color: red;" id="Logout"></a></li>
+
+            <li class="nav-item"><a class="nav-link navTranslatable" href="/userLang/En" id="Eng"></a></li>
+            <li class="nav-item"><a class="nav-link navTranslatable" href="/userLang/Ar" id="Ara"></a></li>
+            <li class="nav-item"><a class="nav-link navTranslatable" href="/userLang/Ch" id="Chi"></a></li>
+
           </ul>
         </div>
       </li>

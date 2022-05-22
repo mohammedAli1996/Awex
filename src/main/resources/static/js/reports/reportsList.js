@@ -1,5 +1,32 @@
 var currentPage = 0 ; 
 
+const langMap = new Map();
+var langIndex = 0 ;
+
+langMap.set("Reports Review", ["Reports Review", "عرض التقارير", "報告審查"]);
+
+langMap.set("Employee", ["Employee", "", ""]);
+langMap.set("DepartmentTra", ["Department", "", ""]);
+langMap.set("DateTra", ["Date", "", ""]);
+langMap.set("Search", ["Search", "", ""]);
+langMap.set("ID", ["ID", "المعرف", "標識符"]);
+langMap.set("Name", ["Name", "الاسم", "姓名"]);
+langMap.set("Department", ["Department", "القسم", "部門"]);
+
+langMap.set("prvBtn", ["Prev", "السابق", "以前的"]);
+langMap.set("nxtBtn", ["Next", "التالي", "下一個"]);
+
+
+langMap.set("select", ["--select--", "--اختيار--", "--選擇--"]);
+langMap.set("Customer Service", ["Customer Service", "خدمة عملاء", "客戶服務"]);
+langMap.set("Call Center", ["Call Center", "مركز اتصال", "呼叫中心"]);
+langMap.set("IT", ["IT", "تقانة معلومات", "信息技术"]);
+langMap.set("Sales", ["Sales", "مبيعات", "銷售量"]);
+langMap.set("Accountant", ["Accountant", "محاسب", "會計"]);
+
+langMap.set("HR", ["HR", "موارد بشرية", "人力資源"]);
+
+
 $(document).ready(function () {
 
     $.ajax({
@@ -17,7 +44,29 @@ $(document).ready(function () {
         error: function (e) {
         }
     });
-
+    $.ajax({
+        type: "GET",
+        contentType: "application/json",
+        url: "/userLang",
+        dataType: 'json',
+        cache: false,
+        timeout: 600000,
+        success: function (data) {
+            if(data.language == "Ar"){
+                langIndex = 1 ; 
+            }else if (data.language == "Ch"){
+                langIndex = 2 ; 
+            }
+            var elements = document.querySelectorAll(".translatable");
+            for (var i = 0, len = elements.length; i < len; i++) {
+                document.getElementById(elements[i].id).innerHTML =  langMap.get(elements[i].id)[langIndex];
+            }
+        },
+        error: function (e) {
+            console.log("err");
+            console.log(e);
+        }
+    });
     filterReports(currentPage);
 
 });

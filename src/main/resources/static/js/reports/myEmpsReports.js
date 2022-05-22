@@ -1,6 +1,45 @@
 var currentPage = 0 ; 
+const langMap = new Map();
+var langIndex = 0 ;
+
+langMap.set("My Employees Daily Report", ["My Employees Daily Report", "التقاري اليومية للموظين التابعين لي", "我的員工日報"]);
+langMap.set("Employee", ["Employee", "الموظف", "員工"]);
+langMap.set("Date", ["Date", "التاريخ", "日期"]);
+langMap.set("Search", ["Search", "بحث", "搜索"]);
+langMap.set("ID", ["ID", "المعرف", "標識符"]);
+langMap.set("Name", ["Name", "الاسم", "姓名"]);
+langMap.set("Department", ["Department", "القسم", "部門"]);
+
+langMap.set("prvBtn", ["Prev", "السابق", "以前的"]);
+langMap.set("nxtBtn", ["Next", "التالي", "下一個"]);
+
+
 
 $(document).ready(function () {
+
+    $.ajax({
+        type: "GET",
+        contentType: "application/json",
+        url: "/userLang",
+        dataType: 'json',
+        cache: false,
+        timeout: 600000,
+        success: function (data) {
+            if(data.language == "Ar"){
+                langIndex = 1 ; 
+            }else if (data.language == "Ch"){
+                langIndex = 2 ; 
+            }
+            var elements = document.querySelectorAll(".translatable");
+            for (var i = 0, len = elements.length; i < len; i++) {
+                document.getElementById(elements[i].id).innerHTML =  langMap.get(elements[i].id)[langIndex];
+            }
+        },
+        error: function (e) {
+            console.log("err");
+            console.log(e);
+        }
+    });
 
     $.ajax({
         type: "GET",

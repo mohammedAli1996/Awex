@@ -308,7 +308,7 @@
             <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">My Employees Daily Report</h4>
+                  <h4 class="card-title translatable" id="My Employees Daily Report"></h4>
                   <!-- <p class="card-description">
                     Add class <code>.table</code>
                   </p> -->
@@ -321,7 +321,7 @@
                      
                       <div class="col-md-6">
                         <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Employee</label>
+                            <label class="col-sm-3 col-form-label translatable" id="Employee"></label>
                             <div class="col-sm-9">
                               <select class="form-control" id="staffDropDown">
                                <option value="-1">--select--</option>
@@ -332,7 +332,7 @@
                       
                       <div class="col-md-6">
                         <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Date</label>
+                          <label class="col-sm-3 col-form-label translatable" id="Date"></label>
                           <div class="col-sm-9">
                             <input type="date" class="form-control" id="date" />
                           </div>
@@ -349,7 +349,7 @@
                  
                     <div class="template-demo" style="float: right;">
                      
-                        <button type="button" class="btn btn-inverse-success btn-fw" onclick="filterReports()">Search</button>
+                        <button type="button" class="btn btn-inverse-success btn-fw translatable" id="Search" onclick="filterReports()"></button>
                      
                       </div>
                       <br>
@@ -367,9 +367,9 @@
                     <table class="table">
                       <thead>
                         <tr>
-                          <th>ID</th>
-                          <th>Name</th>
-                          <th>Department</th>
+                          <th class="translatable" id="ID"></th>
+                          <th class="translatable" id="Name"></th>
+                          <th class="translatable" id="Department"></th>
                          
                           <th></th>
                             <th></th>
@@ -382,8 +382,8 @@
                   </div>
                     <br>
                   <div class="text-right">
-                  <button  class="btn btn-danger btn-icon-text" id="prvBtn" onclick="prv()" disabled>Prev</button>
-                  <button  class="btn btn-primary btn-icon-text" id="nxtBtn" onclick="nxt()">Next</button>
+                  <button  class="btn btn-danger btn-icon-text translatable" id="prvBtn" onclick="prv()" disabled></button>
+                  <button  class="btn btn-primary btn-icon-text translatable" id="nxtBtn" onclick="nxt()"></button>
                   </div>
                 </div>
               </div>
