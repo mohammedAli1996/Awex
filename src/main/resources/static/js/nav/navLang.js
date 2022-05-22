@@ -17,9 +17,9 @@ navLangMap.set("Logout",["Logout","تسجيل الخروج","登出"]);
 navLangMap.set("Users",["Users","المستخدمين","用戶"]);
 navLangMap.set("MyEmployeesReports",["My Employees <br> Reports","تقارير الموظفين","我的員工 <br> 報告"]);
 
-navLangMap.set("Eng",["English","الإنغليزية","英語"]);
-navLangMap.set("Ara",["Arabic","العربية","阿拉伯"]);
-navLangMap.set("Chi",["Chinese","الصينية","中國人"]);
+navLangMap.set("Eng",["English","English","English"]);
+navLangMap.set("Ara",["العربية","العربية","العربية"]);
+navLangMap.set("Chi",["中國人","中國人","中國人"]);
 
 
 
