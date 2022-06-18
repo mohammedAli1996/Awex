@@ -71,6 +71,7 @@
         </div>
        
       </li>
+
       <li class="nav-item">
         <a class="nav-link" data-toggle="collapse" href="#report" aria-expanded="false" aria-controls="form-elements">
           <i class="icon-paper menu-icon"></i>
@@ -87,6 +88,27 @@
         </div>
        
       </li>
+
+
+
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="collapse" href="#webSIte" aria-expanded="false" aria-controls="form-elements">
+          <i class="icon-paper menu-icon"></i>
+          <span class="menu-title navTranslatable" id="webSIte"></span>
+          <i class="menu-arrow"></i>
+        </a>
+        <div class="collapse" id="webSIte">
+          <ul class="nav flex-column sub-menu">
+            <li class="nav-item"><a class="nav-link navTranslatable" href="/tocuhFormList" id="GetInTouchForm"></a></li>
+            <li class="nav-item"><a class="nav-link navTranslatable" href="/ibFormsList" id="IBForm"></a></li>
+            <li class="nav-item"><a class="nav-link navTranslatable" href="/ibKycFormsList" id="IBKYCForm"></a></li>
+          </ul>
+        </div>
+       
+      </li>
+
+
+
       <li sec:authorize="hasAnyAuthority('Admin','HR Manager')" class="nav-item">
         <a class="nav-link" data-toggle="collapse" href="#hiring" aria-expanded="false" aria-controls="form-elements">
           <i class="mdi mdi-cards-outline menu-icon"></i>

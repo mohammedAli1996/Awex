@@ -1,4 +1,4 @@
-package com.awex.awex.management.external;
+package com.awex.awex.management.external.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

@@ -17,6 +17,12 @@ navLangMap.set("Logout",["Logout","تسجيل الخروج","登出"]);
 navLangMap.set("Users",["Users","المستخدمين","用戶"]);
 navLangMap.set("MyEmployeesReports",["My Employees <br> Reports","تقارير الموظفين","我的員工 <br> 報告"]);
 
+
+navLangMap.set("GetInTouchForm",["Get In Touch Form","طلبات التواصل","用戶"]);
+navLangMap.set("IBForm",["IB Form","IB طلب","IB 形式"]);
+navLangMap.set("IBKYCForm",["IB KYC Form","IB KYC طلب","Ib KYC 形式"]);
+
+navLangMap.set("webSIte",["webSite forms","طلبات الموقع","網站表格"]);
 navLangMap.set("Eng",["English","English","English"]);
 navLangMap.set("Ara",["العربية","العربية","العربية"]);
 navLangMap.set("Chi",["中國人","中國人","中國人"]);

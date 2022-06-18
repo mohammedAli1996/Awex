@@ -1,0 +1,7 @@
+$ORIGIN crm.awex.ae.
+$TTL 1800
+crm.awex.ae. IN SOA ns1.digitalocean.com. hostmaster.crm.awex.ae. 1650734362 10800 3600 604800 1800
+crm.awex.ae. 1800 IN NS ns1.digitalocean.com.
+crm.awex.ae. 1800 IN NS ns2.digitalocean.com.
+crm.awex.ae. 1800 IN NS ns3.digitalocean.com.
+crm.awex.ae. 3600 IN A 159.223.235.65
