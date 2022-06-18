@@ -34,6 +34,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 		http 
 		.csrf().disable()
 		.authorizeRequests()
+		.antMatchers("/submitTouchForm").permitAll()
+		.antMatchers("/submitKycForm").permitAll()
+		.antMatchers("/submitIbForm").permitAll()
 		.antMatchers("/config/injectuser").permitAll()
 		.antMatchers("/vendors/**").permitAll()
 		.antMatchers("/users/**").permitAll()
