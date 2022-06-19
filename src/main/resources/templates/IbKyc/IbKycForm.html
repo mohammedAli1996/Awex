@@ -325,7 +325,7 @@
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label translatable" id="name"></label>
                           <div class="col-sm-9">
-                            <input type="text" class="form-control collectable" th:value="${name}" disabled />
+                            <input type="text" class="form-control collectable" th:value="${obj.name}" disabled />
                           </div>
                         </div>
                       </div> 
@@ -337,7 +337,7 @@
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label translatable" id="idNo"></label>
                           <div class="col-sm-9">
-                            <input type="text" class="form-control collectable" th:value="${idNo}" disabled />
+                            <input type="text" class="form-control collectable" th:value="${obj.idNo}" disabled />
                           </div>
                         </div>
                       </div> 
@@ -345,7 +345,7 @@
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label translatable" id="passNo"></label>
                           <div class="col-sm-9">
-                            <input type="text" class="form-control collectable" th:value="${passNo}" disabled />
+                            <input type="text" class="form-control collectable" th:value="${obj.passNo}" disabled />
                           </div>
                         </div>
                       </div> 
@@ -356,7 +356,7 @@
                             <div class="form-group row">
                               <label class="col-sm-3 col-form-label translatable" id="gender"></label>
                               <div class="col-sm-9">
-                                <input type="text" class="form-control collectable"  th:value="${gender}" disabled/>
+                                <input type="text" class="form-control collectable"  th:value="${obj.gender}" disabled/>
                               </div>
                             </div>
                           </div>
@@ -364,7 +364,7 @@
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label translatable" id="emailAddress"></label>
                           <div class="col-sm-9">
-                            <input type="text" class="form-control collectable" th:value="${emailAddress}" disabled />
+                            <input type="text" class="form-control collectable" th:value="${obj.emailAddress}" disabled />
                           </div>
                         </div>
                       </div> 
@@ -376,7 +376,7 @@
                             <div class="form-group row">
                               <label class="col-sm-3 col-form-label translatable" id="nationality"></label>
                               <div class="col-sm-9">
-                                <input type="text" class="form-control collectable"  th:value="${nationality}" disabled/>
+                                <input type="text" class="form-control collectable"  th:value="${obj.nationality}" disabled/>
                               </div>
                             </div>
                           </div>
@@ -384,7 +384,7 @@
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label translatable" id="address"></label>
                           <div class="col-sm-9">
-                            <input type="text" class="form-control collectable" th:value="${address}" disabled />
+                            <input type="text" class="form-control collectable" th:value="${obj.address}" disabled />
                           </div>
                         </div>
                       </div> 
@@ -395,7 +395,7 @@
                           <div class="form-group row">
                             <label class="col-sm-3 col-form-label translatable" id="phone"></label>
                             <div class="col-sm-9">
-                              <input type="text" class="form-control collectable"  th:value="${phone}" disabled/>
+                              <input type="text" class="form-control collectable"  th:value="${obj.phone}" disabled/>
                             </div>
                           </div>
                         </div>
@@ -403,7 +403,7 @@
                       <div class="form-group row">
                         <label class="col-sm-3 col-form-label translatable" id="mobile"></label>
                         <div class="col-sm-9">
-                          <input type="text" class="form-control collectable" th:value="${mobile}" disabled />
+                          <input type="text" class="form-control collectable" th:value="${obj.mobile}" disabled />
                         </div>
                       </div>
                     </div> 
@@ -416,7 +416,7 @@
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label translatable" id="socialPhone"></label>
                           <div class="col-sm-9">
-                            <input type="text" class="form-control collectable"  th:value="${socialPhone}" disabled/>
+                            <input type="text" class="form-control collectable"  th:value="${obj.socialPhone}" disabled/>
                           </div>
                         </div>
                       </div>
@@ -424,7 +424,7 @@
                     <div class="form-group row">
                       <label class="col-sm-3 col-form-label translatable" id="ex"></label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control collectable" th:value="${ex}" disabled />
+                        <input type="text" class="form-control collectable" th:value="${obj.ex}" disabled />
                       </div>
                     </div>
                   </div> 
@@ -437,7 +437,7 @@
                       <div class="form-group row">
                         <label class="col-sm-3 col-form-label translatable" id="coName"></label>
                         <div class="col-sm-9">
-                          <input type="text" class="form-control collectable"  th:value="${coName}" disabled/>
+                          <input type="text" class="form-control collectable"  th:value="${obj.coName}" disabled/>
                         </div>
                       </div>
                     </div>
@@ -445,7 +445,7 @@
                   <div class="form-group row">
                     <label class="col-sm-3 col-form-label translatable" id="businessPhone"></label>
                     <div class="col-sm-9">
-                      <input type="text" class="form-control collectable" th:value="${businessPhone}" disabled />
+                      <input type="text" class="form-control collectable" th:value="${obj.businessPhone}" disabled />
                     </div>
                   </div>
                 </div> 
@@ -460,7 +460,7 @@
                     <div class="form-group row">
                       <label class="col-sm-3 col-form-label translatable" id="faxPhone"></label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control collectable"  th:value="${faxPhone}" disabled/>
+                        <input type="text" class="form-control collectable"  th:value="${obj.faxPhone}" disabled/>
                       </div>
                     </div>
                   </div>
@@ -468,7 +468,7 @@
                 <div class="form-group row">
                   <label class="col-sm-3 col-form-label translatable" id="marketingStrategy"></label>
                   <div class="col-sm-9">
-                    <input type="text" class="form-control collectable" th:value="${marketingStrategy}" disabled />
+                    <input type="text" class="form-control collectable" th:value="${obj.marketingStrategy}" disabled />
                   </div>
                 </div>
               </div> 
@@ -485,7 +485,7 @@
                   <div class="form-group row">
                     <label class="col-sm-3 col-form-label translatable" id="businessAddress"></label>
                     <div class="col-sm-9">
-                      <input type="text" class="form-control collectable"  th:value="${businessAddress}" disabled/>
+                      <input type="text" class="form-control collectable"  th:value="${obj.businessAddress}" disabled/>
                     </div>
                   </div>
                 </div>
@@ -493,7 +493,7 @@
               <div class="form-group row">
                 <label class="col-sm-3 col-form-label translatable" id="scaleOfCompany"></label>
                 <div class="col-sm-9">
-                  <input type="text" class="form-control collectable" th:value="${scaleOfCompany}" disabled />
+                  <input type="text" class="form-control collectable" th:value="${obj.scaleOfCompany}" disabled />
                 </div>
               </div>
             </div> 
@@ -504,7 +504,7 @@
                 <div class="form-group row">
                   <label class="col-sm-3 col-form-label translatable" id="numberOfEmployee"></label>
                   <div class="col-sm-9">
-                    <input type="text" class="form-control collectable"  th:value="${numberOfEmployee}" disabled/>
+                    <input type="text" class="form-control collectable"  th:value="${obj.numberOfEmployee}" disabled/>
                   </div>
                 </div>
               </div>
@@ -512,7 +512,7 @@
             <div class="form-group row">
               <label class="col-sm-3 col-form-label translatable" id="industry"></label>
               <div class="col-sm-9">
-                <input type="text" class="form-control collectable" th:value="${industry}" disabled />
+                <input type="text" class="form-control collectable" th:value="${obj.industry}" disabled />
               </div>
             </div>
           </div> 
@@ -523,7 +523,7 @@
               <div class="form-group row">
                 <label class="col-sm-3 col-form-label translatable" id="annualIncome"></label>
                 <div class="col-sm-9">
-                  <input type="text" class="form-control collectable"  th:value="${annualIncome}" disabled/>
+                  <input type="text" class="form-control collectable"  th:value="${obj.annualIncome}" disabled/>
                 </div>
               </div>
             </div>
@@ -531,7 +531,7 @@
           <div class="form-group row">
             <label class="col-sm-3 col-form-label translatable" id="natureOfBusiness"></label>
             <div class="col-sm-9">
-              <input type="text" class="form-control collectable" th:value="${natureOfBusiness}" disabled />
+              <input type="text" class="form-control collectable" th:value="${obj.natureOfBusiness}" disabled />
             </div>
           </div>
         </div> 
@@ -542,7 +542,7 @@
             <div class="form-group row">
               <label class="col-sm-3 col-form-label translatable" id="position"></label>
               <div class="col-sm-9">
-                <input type="text" class="form-control collectable"  th:value="${position}" disabled/>
+                <input type="text" class="form-control collectable"  th:value="${obj.position}" disabled/>
               </div>
             </div>
           </div>
@@ -550,7 +550,7 @@
         <div class="form-group row">
           <label class="col-sm-3 col-form-label translatable" id="mailingAddress"></label>
           <div class="col-sm-9">
-            <input type="text" class="form-control collectable" th:value="${mailingAddress}" disabled />
+            <input type="text" class="form-control collectable" th:value="${obj.mailingAddress}" disabled />
           </div>
         </div>
       </div> 
@@ -562,7 +562,7 @@
           <div class="form-group row">
             <label class="col-sm-3 col-form-label translatable" id="currentCompany"></label>
             <div class="col-sm-9">
-              <input type="text" class="form-control collectable"  th:value="${currentCompany}" disabled/>
+              <input type="text" class="form-control collectable"  th:value="${obj.currentCompany}" disabled/>
             </div>
           </div>
         </div>
@@ -570,7 +570,7 @@
       <div class="form-group row">
         <label class="col-sm-3 col-form-label translatable" id="timeOfContact"></label>
         <div class="col-sm-9">
-          <input type="text" class="form-control collectable" th:value="${timeOfContact}" disabled />
+          <input type="text" class="form-control collectable" th:value="${obj.timeOfContact}" disabled />
         </div>
       </div>
     </div> 
@@ -582,7 +582,7 @@
         <div class="form-group row">
           <label class="col-sm-3 col-form-label translatable" id="idealWayOfWorkTogether"></label>
           <div class="col-sm-9">
-            <input type="text" class="form-control collectable"  th:value="${idealWayOfWorkTogether}" disabled/>
+            <input type="text" class="form-control collectable"  th:value="${obj.idealWayOfWorkTogether}" disabled/>
           </div>
         </div>
       </div>
@@ -590,7 +590,7 @@
     <div class="form-group row">
       <label class="col-sm-3 col-form-label translatable" id="monthlyIncome"></label>
       <div class="col-sm-9">
-        <input type="text" class="form-control collectable" th:value="${monthlyIncome}" disabled />
+        <input type="text" class="form-control collectable" th:value="${obj.monthlyIncome}" disabled />
       </div>
     </div>
   </div> 
@@ -603,7 +603,7 @@
       <div class="form-group row">
         <label class="col-sm-3 col-form-label translatable" id="emails"></label>
         <div class="col-sm-9">
-          <input type="text" class="form-control collectable"  th:value="${emails}" disabled/>
+          <input type="text" class="form-control collectable"  th:value="${obj.emails}" disabled/>
         </div>
       </div>
     </div>
@@ -611,7 +611,7 @@
   <div class="form-group row">
     <label class="col-sm-3 col-form-label translatable" id="monthlyTradingScale"></label>
     <div class="col-sm-9">
-      <input type="text" class="form-control collectable" th:value="${monthlyTradingScale}" disabled />
+      <input type="text" class="form-control collectable" th:value="${obj.monthlyTradingScale}" disabled />
     </div>
   </div>
 </div> 
@@ -624,7 +624,7 @@
       <div class="form-group row">
         <label class="col-sm-3 col-form-label translatable" id="selfTradingOrAgency"></label>
         <div class="col-sm-9">
-          <input type="text" class="form-control collectable"  th:value="${selfTradingOrAgency}" disabled/>
+          <input type="text" class="form-control collectable"  th:value="${obj.selfTradingOrAgency}" disabled/>
         </div>
       </div>
     </div>
@@ -632,7 +632,7 @@
   <div class="form-group row">
     <label class="col-sm-3 col-form-label translatable" id="mainMarket"></label>
     <div class="col-sm-9">
-      <input type="text" class="form-control collectable" th:value="${mainMarket}" disabled />
+      <input type="text" class="form-control collectable" th:value="${obj.mainMarket}" disabled />
     </div>
   </div>
 </div> 
@@ -645,7 +645,7 @@
       <div class="form-group row">
         <label class="col-sm-3 col-form-label translatable" id="descro"></label>
         <div class="col-sm-9">
-          <input type="text" class="form-control collectable"  th:value="${descro}" disabled/>
+          <input type="text" class="form-control collectable"  th:value="${obj.descro}" disabled/>
         </div>
       </div>
     </div>
@@ -653,7 +653,7 @@
   <div class="form-group row">
     <label class="col-sm-3 col-form-label translatable" id="descroo"></label>
     <div class="col-sm-9">
-      <input type="text" class="form-control collectable" th:value="${descroo}" disabled />
+      <input type="text" class="form-control collectable" th:value="${obj.descroo}" disabled />
     </div>
   </div>
 </div> 
@@ -665,7 +665,7 @@
       <div class="form-group row">
         <label class="col-sm-3 col-form-label translatable" id="descrooo"></label>
         <div class="col-sm-9">
-          <input type="text" class="form-control collectable"  th:value="${descrooo}" disabled/>
+          <input type="text" class="form-control collectable"  th:value="${obj.descrooo}" disabled/>
         </div>
       </div>
     </div>
@@ -673,7 +673,7 @@
   <div class="form-group row">
     <label class="col-sm-3 col-form-label translatable" id="annualIncomeD"></label>
     <div class="col-sm-9">
-      <input type="text" class="form-control collectable" th:value="${annualIncomeD}" disabled />
+      <input type="text" class="form-control collectable" th:value="${obj.annualIncomeD}" disabled />
     </div>
   </div>
 </div> 
@@ -684,7 +684,7 @@
       <div class="form-group row">
         <label class="col-sm-3 col-form-label translatable" id="property"></label>
         <div class="col-sm-9">
-          <input type="text" class="form-control collectable"  th:value="${property}" disabled/>
+          <input type="text" class="form-control collectable"  th:value="${obj.property}" disabled/>
         </div>
       </div>
     </div>
@@ -692,7 +692,7 @@
   <div class="form-group row">
     <label class="col-sm-3 col-form-label translatable" id="investmentExperience"></label>
     <div class="col-sm-9">
-      <input type="text" class="form-control collectable" th:value="${investmentExperience}" disabled />
+      <input type="text" class="form-control collectable" th:value="${obj.investmentExperience}" disabled />
     </div>
   </div>
 </div> 
@@ -706,7 +706,7 @@
       <div class="form-group row">
         <label class="col-sm-3 col-form-label translatable" id="options"></label>
         <div class="col-sm-9">
-          <input type="text" class="form-control collectable"  th:value="${options}" disabled/>
+          <input type="text" class="form-control collectable"  th:value="${obj.options}" disabled/>
         </div>
       </div>
     </div>
@@ -714,7 +714,7 @@
   <div class="form-group row">
     <label class="col-sm-3 col-form-label translatable" id="investmentObjectives"></label>
     <div class="col-sm-9">
-      <input type="text" class="form-control collectable" th:value="${investmentObjectives}" disabled />
+      <input type="text" class="form-control collectable" th:value="${obj.investmentObjectives}" disabled />
     </div>
   </div>
 </div> 
@@ -727,7 +727,7 @@
       <div class="form-group row">
         <label class="col-sm-3 col-form-label translatable" id="sc"></label>
         <div class="col-sm-9">
-          <input type="text" class="form-control collectable"  th:value="${sc}" disabled/>
+          <input type="text" class="form-control collectable"  th:value="${obj.sc}" disabled/>
         </div>
       </div>
     </div>
@@ -735,7 +735,7 @@
   <div class="form-group row">
     <label class="col-sm-3 col-form-label translatable" id="socialName"></label>
     <div class="col-sm-9">
-      <input type="text" class="form-control collectable" th:value="${socialName}" disabled />
+      <input type="text" class="form-control collectable" th:value="${obj.socialName}" disabled />
     </div>
   </div>
 </div> 
