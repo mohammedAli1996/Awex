@@ -15,7 +15,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class IbKycForm {
+public class IbKycForm {    
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY) 
