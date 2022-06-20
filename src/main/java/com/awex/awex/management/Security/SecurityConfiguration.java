@@ -92,11 +92,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 		.loginPage("/login").permitAll()
 		.and()
 		.logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/login").deleteCookies("JSESSIONID");
-		
-//		 http.requiresChannel()
-//         .requestMatchers(r -> r.getHeader("X-Forwarded-Proto") != null)
-//         .requiresSecure();
-//		 http.cors().and().csrf().disable();
+				
+		 http.requiresChannel()
+         .requestMatchers(r -> r.getHeader("X-Forwarded-Proto") != null)
+         .requiresSecure();
+		 http.cors().and().csrf().disable();
 	}
 		
 	@Bean
@@ -111,6 +111,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 	PasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder(); 
 	}
+	
 	
 	
 
