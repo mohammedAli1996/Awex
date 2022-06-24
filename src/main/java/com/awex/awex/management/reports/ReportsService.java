@@ -96,7 +96,7 @@ public class ReportsService {
 			if(i >= response.size()) {
 				break ; 
 			}else {
-				response.get(i).setEmpName(userService.getUser(response.get(i).getEmpId()).getEmployeeName());
+				//response.get(i).setEmpName(userService.getUser(response.get(i).getEmpId()).getEmployeeName());
 				paged.add(response.get(i));
 			}
 		}
