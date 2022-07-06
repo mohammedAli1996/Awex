@@ -12,8 +12,8 @@ import org.springframework.stereotype.Service;
 import com.awex.awex.management.Utils;
 import com.awex.awex.management.Security.MasterService;
 import com.awex.awex.management.Security.UserRepository;
-import com.awex.awex.management.Security.UserService;
 import com.awex.awex.management.Security.Usersys;
+import com.awex.awex.management.staff.StaffService;
 
 @Service
 public class ReportsService {
@@ -21,14 +21,18 @@ public class ReportsService {
 	@Autowired
 	private ReportRepository reportRepository ; 
 	
-	@Autowired  
-	private UserService userService ; 
-	
+	@Autowired
+	private StaffService staffService ; 
+	 
 	@Autowired
 	private MasterService masterService ; 
 	
 	public String getDepartment() {
-		return masterService.get_current_User().getDepartment();
+		Usersys user = masterService.get_current_User();
+		if(user.getRepoId() != -1 ) {
+			return staffService.findById(user.getRepoId()).getDepartment();
+		}
+		return user.getDepartment(); 
 	}
 	
 	public Report addReport(Report request ) {  

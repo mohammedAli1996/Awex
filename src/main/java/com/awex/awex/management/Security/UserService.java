@@ -119,6 +119,8 @@ public class UserService {
 		return users ; 
 	}
 	
+
+	
 	public List<UserResponse> getAllUsers(){
 		List<UserResponse> users = new ArrayList<UserResponse>();   
 		for(Usersys user : userRepository.findAll()) {
@@ -127,7 +129,13 @@ public class UserService {
 			}
 			UserResponse response = new UserResponse();
 			response.setActive(user.isActive());
-			response.setEmployeeName(user.getEmployeeName());
+			try {
+				if(user.getRepoId() != -1 ) {
+					response.setEmployeeName(staffService.findById(user.getRepoId()).getName());
+				}
+			}catch(Exception ex ) {
+				response.setEmployeeName(user.getEmployeeName());
+			}
 			response.setId(user.getId());
 			response.setUserName(user.getUsername());
 			response.setDepartment(user.getDepartment());
