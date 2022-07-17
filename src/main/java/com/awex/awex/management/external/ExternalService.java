@@ -1,6 +1,8 @@
 package com.awex.awex.management.external;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -45,6 +47,8 @@ public class ExternalService {
  	}
 	
 	public IbForm sendIbForm(IbForm form ) {
+		SimpleDateFormat DateFor = new SimpleDateFormat("dd/MM/yyyy");
+		form.setCreatedAt(DateFor.format(new Date()));
 		return ibFormRepository.save(form);
 	}
 	
@@ -84,6 +88,8 @@ public class ExternalService {
  	}
 	
 	public TouchForm sendTouchForm(TouchForm form) {
+		SimpleDateFormat DateFor = new SimpleDateFormat("dd/MM/yyyy");
+		form.setCreatedAt(DateFor.format(new Date()));
 		return touchFormRepository.save(form);
 	}
 	
@@ -123,6 +129,8 @@ public class ExternalService {
  	}
 	
 	public IbKycForm sendIbKycForm(IbKycForm form ) {
+		SimpleDateFormat DateFor = new SimpleDateFormat("dd/MM/yyyy");
+		form.setCreatedAt(DateFor.format(new Date()));
 		return ibKycFormRepository.save(form);
 	}
 	

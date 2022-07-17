@@ -24,5 +24,5 @@ public class TouchForm {
 	private String type ; 
 	private String phone ; 
 	private String topic ; 
-	
+	private String createdAt ; 
 }

@@ -100,4 +100,6 @@ public class IbKycForm {
 
     public String socialName ;
 
+    private String createdAt ; 
+    
 }

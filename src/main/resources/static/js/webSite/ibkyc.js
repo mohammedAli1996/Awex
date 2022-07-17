@@ -69,7 +69,7 @@ function getTableBody(currentPage){
         success: function (result) {
             var data = result.list ; 
             for(var i = 0 ; i < data.length ; i ++){
-                document.getElementById("resultBody").innerHTML += "<td>"+data[i].name+"</td><td>"+data[i].emails+"</td><td>"+data[i].nationality+"</td><td><a class='btn btn-inverse-danger btn-icon' href='/getKycForm/"+data[i].id+"'><i class='ti-slice'></i></a></td>"    ;
+                document.getElementById("resultBody").innerHTML += "<td>"+data[i].name+"</td><td>"+data[i].emails+"</td><td>"+data[i].nationality+"</td><td>"+data[i].createdAt+"</td><td><a class='btn btn-inverse-danger btn-icon' href='/getKycForm/"+data[i].id+"'><i class='ti-slice'></i></a></td>"    ;
             } 
 
 
